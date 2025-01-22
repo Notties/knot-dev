@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_Thai} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const noto_Sans_Thai = Noto_Sans_Thai({
   subsets: ["latin", "thai"],
@@ -25,6 +26,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Card from "@/components/Cards";
+import { skills } from "@/data/skills";
 
 export default function Hero() {
   const [time, setTime] = useState("");
@@ -64,7 +66,7 @@ export default function Hero() {
         <div className="flex w-full gap-5">
           {/* My picture */}
           <Image
-            className="border w-[5rem] h-[5rem] rounded-full"
+            className="border w-[5rem] h-[5rem] rounded-full "
             src={"/icons/me.png"}
             width={100}
             height={100}
@@ -94,7 +96,7 @@ export default function Hero() {
       </div>
 
       {/* My introduction */}
-      <div className="mt-[2rem] w-full">
+      <div className="mt-[1.5rem] w-full">
         <p className="text-black text-[0.9rem]">
           I&apos;m a software developer with 1 year of experience. I work across
           both front-end and back-end development, focusing on creating
@@ -103,6 +105,12 @@ export default function Hero() {
       </div>
 
       {/* My skills */}
+      <div className="mt-[1.5rem] grid grid-cols-4 justify-center items-center w-full 
+      gap-2">
+        {skills.map((skill) => (
+          <Card key={skill.name} title={skill.name} imgSrc={skill.icon} />
+        ))}
+      </div>
     </section>
   );
 }
