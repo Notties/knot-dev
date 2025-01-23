@@ -10,7 +10,10 @@ const noto_Sans_Thai = Noto_Sans_Thai({
 });
 
 export const metadata: Metadata = {
-  title: "Knot",
+  title: {
+    template: "%s - Knot",
+    default: "Knot",
+  },
   description: "Software developers in Thailand specializing in creating web applications, mobile applications",
 };
 

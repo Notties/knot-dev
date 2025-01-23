@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="px-[1.5rem] w-full flex justify-center items-start mt-[3rem] mb-[3.5rem]">
+    <div className="px-[1.5rem] w-full flex justify-center items-start mt-[3rem] mb-[2.5rem]">
       <div className="flex h-full w-full items-center justify-between max-w-custom ">
         <div className="w-full h-[2.5rem] flex flex-col justify-start items-start ">
           <Link href={"/"}>
@@ -20,25 +20,25 @@ export default function Footer() {
         </div>
         <div
           className="text-gray text-sm font-medium h-[2.5rem] 
-        items-start flex justify-end gap-5"
+        items-center flex justify-end gap-5"
         >
           <Link
             href={"/"}
             className="hover:text-black transition-all duration-300"
           >
-            <Github />
+            <Github name="github" className="h-[17px] w-[17px]"/>
           </Link>
           <Link
             href={"/"}
             className="hover:text-black transition-all duration-300"
           >
-            <Linkedin />
+            <Linkedin name="linkedin" className="h-[17px] w-[17px]"/>
           </Link>
           <Link
             href={"/"}
             className="hover:text-black transition-all duration-300"
           >
-            <Mail />
+            <Mail name="mail" className="h-[17px] w-[17px]"/>
           </Link>
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function Navbar() {
           className="text-gray text-base font-medium w-full h-full 
         items-center flex justify-end gap-5"
         >
-          <Link href={"/"}>blog</Link>
+          <Link href={"/blog"}>blog</Link>
           <Link href={"/"}>projects</Link>
           <Link href={"/"}>contact</Link>
         </div>
