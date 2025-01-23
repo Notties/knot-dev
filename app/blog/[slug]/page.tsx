@@ -7,7 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
