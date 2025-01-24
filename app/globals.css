@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   scroll-behavior: smooth;
   scroll-margin: 1rem;
 }
@@ -68,5 +68,43 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  @keyframes cloud {
+    0% {
+      transform: translate(50%, 50%);
+    }
+    100% {
+      transform: translate(-100%, -100%);
+    }
+  }
+  @keyframes plane {
+    0% {
+      transform: translate(100%, 100%) rotate(-65deg);
+    }
+    100% {
+      transform: translate(-2000%, -300%) rotate(-65deg);
+    }
+  }
+  @keyframes plane-shadow {
+    0% {
+      transform: translate(100%, 200%) rotate(-65deg);
+    }
+    100% {
+      transform: translate(-2000%, -600%) rotate(-65deg);
+      opacity: 0.1;
+    }
+  }
+  .animate-cloud {
+    animation: cloud 30s linear infinite;
+    animation-delay: 3s;
+  }
+  .animate-plane {
+    animation: plane 30s linear infinite;
+    animation-delay: 3s;
+  }
+  .animate-plane-shadow {
+    animation: plane-shadow 30s linear infinite;
+    animation-delay: 3s;
   }
 }

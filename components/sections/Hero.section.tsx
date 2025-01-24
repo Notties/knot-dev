@@ -1,10 +1,11 @@
 "use client";
+
 import { useState, useEffect } from "react";
-import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
-import { cn } from "@/lib/utils";
+import MapComponent from "@/components/MapComponent";
 import Image from "next/image";
 import Card from "@/components/Cards";
 import { skills } from "@/data/skills";
+
 
 export default function Hero() {
   const [time, setTime] = useState("");
@@ -34,31 +35,55 @@ export default function Hero() {
   return (
     <section className="w-full">
       {/* Banner */}
-      <div className="relative overflow-hidden rounded-t-[0.7rem]">
-        <div className="w-full h-[12rem] border-x border-t  rounded-t-[0.7rem]"></div>
-        <AnimatedGridPattern
-          numSquares={30}
-          maxOpacity={0.1}
-          duration={3}
-          repeatDelay={1}
-          className={cn(
-            "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
-          )}
-        />
+      <div className="relative overflow-hidden rounded-t-[0.7rem] group">
+        <div className="w-full  rounded-t-[0.7rem]"></div>
+
+        <MapComponent />
 
         {/* Time zone */}
         <div
           className="absolute top-[0.7rem] right-[0.7rem] py-1 px-3 rounded-sm
-        bg-slate-100/30 backdrop-blur-md shadow-sm flex justify-center items-center"
+        bg-slate-100/30 backdrop-blur-md shadow-sm flex justify-center items-center
+        pointer-events-none"
         >
           <p className="text-xs text-gray">{time} GMT+7</p>
         </div>
 
+        {/* Clouds */}
+        <Image
+          width={390}
+          height={347}
+          alt="cloud"
+          draggable="false"
+          className="absolute top-0 right-0 size-80 animate-cloud group-hover:opacity-0 transition-all
+          blur-sm opacity-75  z-20 pointer-events-none"
+          src="/cloud.png"
+        />
+        {/* Plane */}
+        <Image
+          width={24}
+          height={24}
+          alt="plane"
+          draggable="false"
+          className="-rotate-[65deg] -right-0 -bottom-0 absolute pointer-events-none group-hover:opacity-0 transition-all
+          animate-plane "
+          src="/plane.png"
+        />
+        {/* Plane shadow */}
+        <Image
+          width={24}
+          height={24}
+          alt="plane-shadow"
+          draggable="false"
+          className="-rotate-[65deg] -right-0 -bottom-0 absolute pointer-events-none group-hover:opacity-0 transition-all
+          animate-plane-shadow"
+          src="/plane-shadow.png"
+        />
+
         {/* Divider */}
         <div
           className="absolute bottom-0 h-[4rem] w-full 
-        bg-gradient-to-t from-white "
+        bg-gradient-to-t from-white pointer-events-none z-30"
         ></div>
       </div>
 
@@ -105,8 +130,10 @@ export default function Hero() {
       </div>
 
       {/* My skills */}
-      <div className="mt-[1.5rem] grid grid-cols-4 justify-center items-center w-full 
-      gap-2">
+      <div
+        className="mt-[1.5rem] grid grid-cols-4 justify-center items-center w-full 
+      gap-2"
+      >
         {skills.map((skill) => (
           <Card key={skill.name} title={skill.name} imgSrc={skill.icon} />
         ))}

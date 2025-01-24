@@ -11,7 +11,7 @@ const Card: React.FC<CardProps> = ({ title, imgSrc }) => {
   return (
     <div
       className="border w-full flex flex-col cursor-pointer
-    justify-center items-center rounded-lg hover:shadow-md transition-all duration-300
+    justify-center items-center rounded-lg hover:shadow-sm transition-all duration-300
     gap-2 grayscale hover:grayscale-0
     h-[4rem] xs:h-[5rem] 
     "

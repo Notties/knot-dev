@@ -1,7 +1,8 @@
 import Experience from "@/components/sections/Experience.section";
-import Header from "@/components/sections/Hero.section";
 import Posts from "@/components/sections/Post.section";
 import Projects from "@/components/sections/Projects.section";
+import Header from "@/components/sections/Hero.section";
+
 
 export default function Home() {
   return (
