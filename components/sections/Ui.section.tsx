@@ -11,6 +11,11 @@ export default function UI() {
           <p className="text-xs text-gray">UI</p>
         </div>
 
+        <div className="w-full grid grid-cols-5 gap-3">
+          <div className="h-[10rem] border rounded-md w-full col-span-3"></div>
+          <div className="h-[10rem] border rounded-md w-full col-span-2"></div>
+        </div>
+
         {/* Typing test */}
         <BongoCatTyping />
       </div>
