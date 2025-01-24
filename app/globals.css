@@ -80,19 +80,18 @@
   }
   @keyframes plane {
     0% {
-      transform: translate(100%, 100%) rotate(-60deg);
+      transform: translate(100%, 100%) rotate(-52deg);
     }
     100% {
-      transform: translate(-1700%, -300%) rotate(-60deg);
+      transform: translate(-1500%, -300%) rotate(-52deg);
     }
   }
   @keyframes plane-shadow {
     0% {
-      transform: translate(100%, 200%) rotate(-60deg);
+      transform: translate(100%, 300%) rotate(-52deg);
     }
     100% {
-      transform: translate(-1700%, -650%) rotate(-60deg);
-      opacity: 0.5;
+      transform: translate(-1500%, -700%) rotate(-52deg);
     }
   }
   .animate-cloud {
