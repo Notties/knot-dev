@@ -80,8 +80,12 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography"), require('tailwindcss-motion')],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    require("tailwindcss-motion"),
+    require('tailwindcss-intersect') 
+  ],
 } satisfies Config;

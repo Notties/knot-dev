@@ -6,9 +6,9 @@ import Image from "next/image";
 import Card from "@/components/Cards";
 import { skills } from "@/data/skills";
 
-
 export default function Hero() {
   const [time, setTime] = useState("");
+  const [showClouds, setShowClouds] = useState(false);
 
   useEffect(() => {
     function getTimeInBangkok() {
@@ -21,30 +21,36 @@ export default function Hero() {
       });
     }
 
-    setTime(getTimeInBangkok());
-
     // Update the time every second
     const interval = setInterval(() => {
       setTime(getTimeInBangkok());
     }, 1000);
 
-    // Cleanup interval on component unmount
-    return () => clearInterval(interval);
+    // Show clouds after 4 seconds
+    const timeout = setTimeout(() => {
+      setShowClouds(true);
+    }, 4000);
+
+    // Cleanup interval and timeout on component unmount
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
-    <section className="w-full">
+    <section className="w-full intersect-once">
       {/* Banner */}
-      <div className="relative overflow-hidden rounded-t-[0.7rem] group">
+      <div className="relative overflow-hidden rounded-t-[0.7rem] group ">
         <div className="w-full  rounded-t-[0.7rem]"></div>
 
-        <MapComponent />
+        <MapComponent mapKey="map" />
 
         {/* Time zone */}
         <div
           className="absolute top-[0.7rem] right-[0.7rem] py-1 px-3 rounded-sm
         bg-slate-100/30 backdrop-blur-md shadow-sm flex justify-center items-center
-        pointer-events-none"
+        pointer-events-none "
         >
           <p className="text-xs text-gray">{time} GMT+7</p>
         </div>
@@ -55,8 +61,8 @@ export default function Hero() {
           height={347}
           alt="cloud"
           draggable="false"
-          className="absolute top-0 right-0 size-80 animate-cloud group-hover:opacity-0 transition-all
-          blur-sm opacity-75  z-20 pointer-events-none"
+          className={`absolute top-0 right-0 size-80 animate-cloud group-hover:opacity-0 transition-all
+          blur-sm z-20 pointer-events-none ${showClouds ? "opacity-75" : "opacity-0"} `}
           src="/cloud.png"
         />
         {/* Plane */}
@@ -65,8 +71,8 @@ export default function Hero() {
           height={24}
           alt="plane"
           draggable="false"
-          className="-rotate-[65deg] -right-0 -bottom-0 absolute pointer-events-none group-hover:opacity-0 transition-all
-          animate-plane "
+          className={`-right-0 -bottom-0 absolute pointer-events-none group-hover:opacity-0 transition-all
+          animate-plane ${showClouds ? "opacity-100" : "opacity-0"}`}
           src="/plane.png"
         />
         {/* Plane shadow */}
@@ -75,8 +81,8 @@ export default function Hero() {
           height={24}
           alt="plane-shadow"
           draggable="false"
-          className="-rotate-[65deg] -right-0 -bottom-0 absolute pointer-events-none group-hover:opacity-0 transition-all
-          animate-plane-shadow"
+          className={`-right-0 -bottom-0 absolute pointer-events-none group-hover:opacity-0 transition-all
+          animate-plane-shadow ${showClouds ? "opacity-100" : "opacity-0"}`}
           src="/plane-shadow.png"
         />
 
@@ -87,7 +93,12 @@ export default function Hero() {
         ></div>
       </div>
 
-      <div className="w-full flex justify-start gap-5">
+      {/* My profile */}
+      <div
+        className="w-full flex justify-start gap-5 
+      intersect:motion-preset-slide-up
+      motion-duration-[1s] motion-opacity-in-0 "
+      >
         <div className="flex w-full gap-5">
           {/* My picture */}
           <Image
@@ -121,7 +132,11 @@ export default function Hero() {
       </div>
 
       {/* My introduction */}
-      <div className="mt-[1.5rem] w-full">
+      <div
+        className="mt-[1.5rem] w-full
+      intersect:motion-preset-slide-up
+      motion-duration-[1s] motion-opacity-in-0 "
+      >
         <p className="text-black text-[0.9rem]">
           I&apos;m a software developer with 1 year of experience. I work across
           both front-end and back-end development, focusing on creating
@@ -131,8 +146,9 @@ export default function Hero() {
 
       {/* My skills */}
       <div
-        className="mt-[1.5rem] grid grid-cols-4 justify-center items-center w-full 
-      gap-2"
+        className="mt-[1.5rem] grid grid-cols-4 justify-center items-center w-full gap-2
+        intersect:motion-preset-slide-up motion-opacity-in-0 
+      motion-duration-[1s]"
       >
         {skills.map((skill) => (
           <Card key={skill.name} title={skill.name} imgSrc={skill.icon} />

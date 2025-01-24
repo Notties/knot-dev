@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Noto_Sans_Thai} from "next/font/google";
+import { Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { ViewTransitions } from "next-view-transitions";
 
 const noto_Sans_Thai = Noto_Sans_Thai({
   subsets: ["latin", "thai"],
@@ -14,7 +15,8 @@ export const metadata: Metadata = {
     template: "%s - Knot",
     default: "Knot",
   },
-  description: "Software developers in Thailand specializing in creating web applications, mobile applications",
+  description:
+    "Software developers in Thailand specializing in creating web applications, mobile applications",
 };
 
 export default function RootLayout({
@@ -23,14 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${noto_Sans_Thai.className} antialiased`}
-      >
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body className={`${noto_Sans_Thai.className} antialiased`}>
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

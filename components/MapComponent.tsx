@@ -3,14 +3,18 @@ import { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
-export default function MapComponent() {
+interface MapComponentProps {
+  mapKey: string; 
+}
+
+export default function MapComponent({ mapKey }: MapComponentProps) {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<maplibregl.Map | null>(null);
 
   useEffect(() => {
     if (map.current || !mapContainer.current) return;
 
-    map.current = new maplibregl.Map({
+    const newMap = new maplibregl.Map({
       container: mapContainer.current,
       style: "https://tiles.stadiamaps.com/styles/alidade_smooth.json",
       center: [100.5018, 13.7563],
@@ -18,8 +22,8 @@ export default function MapComponent() {
       attributionControl: false,
     });
 
-    map.current.on("load", () => {
-      map.current?.flyTo({
+    newMap.on("load", () => {
+      newMap.flyTo({
         center: [100.5018, 13.7563],
         zoom: 13,
         essential: true,
@@ -80,15 +84,15 @@ export default function MapComponent() {
 
       new maplibregl.Marker({ element: el })
         .setLngLat(marker.geometry.coordinates as [number, number])
-        .addTo(map.current!);
+        .addTo(newMap);
     });
 
     return () => {
-      if (map.current) {
-        map.current.remove();
+      if (newMap) {
+        newMap.remove();
       }
     };
-  }, []);
+  }, [mapKey]);
 
   return (
     <div

@@ -1,7 +1,7 @@
 "use client";
 
 import { Github, Linkedin, Mail } from "lucide-react";
-import Link from "next/link";
+import { Link } from 'next-view-transitions'
 
 export default function Footer() {
   return (

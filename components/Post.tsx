@@ -1,6 +1,6 @@
 import { PostMetadata } from "@/lib/posts";
 import { formatDate } from "@/lib/utils";
-import Link from "next/link";
+import { Link } from 'next-view-transitions'
 import { Card } from "./ui/card";
 import { Separator } from "./ui/separator";
 import Image from "next/image";
