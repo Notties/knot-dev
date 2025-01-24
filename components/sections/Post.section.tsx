@@ -26,7 +26,7 @@ export default async function Post() {
         </div>
 
         <div
-          className="h-auto rounded-xl w-full 
+          className="h-auto rounded-md w-full 
         flex justify-center items-start gap-5"
         >
           <Posts posts={posts} />

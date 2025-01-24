@@ -11,7 +11,7 @@ export default function Projects() {
           <p className="text-xs text-gray">Recent Projects</p>
         </div>
         <div
-          className="border h-[20rem] rounded-xl w-full 
+          className="border h-[20rem] rounded-md w-full 
         flex justify-center items-center text-center"
         >
           <p className="text-sm text-gray">Coming soon..</p>

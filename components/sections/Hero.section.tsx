@@ -112,9 +112,9 @@ export default function Hero() {
           <div className="flex flex-col justify-center items-start">
             {/* My name */}
             <div className="flex h-full justify-center items-end">
-              <p className="font-semibold text-black text-xl">
-                Hi, I&apos;m Knot 👋
-              </p>
+              <span className="font-semibold text-black text-xl flex gap-1">
+                Hi, I&apos;m Knot <p className=" hover:scale-125 hover:rotate-12 transition-all duration-300">👋</p>
+              </span>
             </div>
             {/* My status */}
             <div className="flex flex-col gap-[0.1rem] justify-start items-start text-center h-full">

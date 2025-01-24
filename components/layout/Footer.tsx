@@ -10,13 +10,12 @@ export default function Footer() {
         <div className="w-full h-[2.5rem] flex flex-col justify-start items-start ">
           <Link href={"/"}>
             <span className="text-xs flex gap-1 text-gray">
-              © {new Date().getFullYear()}{" "}
               <p className=" transition-all duration-300 hover:text-black">
                 knot-dev.tech
               </p>
             </span>
           </Link>
-          <p className="text-xs text-gray ">Last updated: January 23, 2025</p>
+          <p className="text-xs text-gray ">Last updated: January 25, 2025</p>
         </div>
         <div
           className="text-gray text-sm font-medium h-[2.5rem] 
