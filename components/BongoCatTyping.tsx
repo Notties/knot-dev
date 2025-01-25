@@ -119,7 +119,7 @@ export default function BongoCatTyping() {
 
       timeout = setTimeout(() => {
         setCatImage(catNone);
-      }, 30);
+      }, 100);
     } else {
       setCatImage(catNone);
     }

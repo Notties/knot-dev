@@ -10,9 +10,8 @@ export default function Compare() {
     <div className="w-full h-full">
       <motion.div
         onMouseMove={(event) => {
-          // อัปเดตตำแหน่งของเมาส์
           const rect = event.currentTarget.getBoundingClientRect();
-          const mouseY = event.clientY - rect.top; // ตำแหน่งของเมาส์ในแนวตั้งภายใน div
+          const mouseY = event.clientY - rect.top;
           setMouseY(mouseY);
         }}
         onMouseLeave={() => {
@@ -65,23 +64,28 @@ export default function Compare() {
           I like to make things interactive.
         </p>
 
+        {/* Animated line */}
         <motion.div
           className="after:-top-[2px] absolute top-0 left-0 h-[2px] 
-        w-full bg-muted transition-colors duration-100 ease-in
+        w-full bg-muted
         after:absolute after:h-[2px] after:w-full 
         after:bg-background group-hover:bg-indigo-400"
           style={{ y: mouseY }}
+          transition={{ duration: 0.5 }}
         ></motion.div>
 
+        {/* Gradient overlay */}
         <motion.div
-          className="absolute h-full w-full transition-colors duration-100 ease-in
+          className="absolute h-full w-full
         bg-gradient-to-b from-indigo-400/40 to-transparent
         "
-          style={{
+        style={{
             clipPath: `inset(${mouseY}px 0 0  )`,
           }}
+          transition={{ duration: 0.5 }}
         ></motion.div>
 
+        {/* Text shadow effect */}
         <div
           className="pointer-events-none absolute 
         flex h-full w-full select-none items-center justify-center p-12
