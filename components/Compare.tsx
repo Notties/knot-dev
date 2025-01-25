@@ -70,8 +70,8 @@ export default function Compare() {
         w-full bg-muted
         after:absolute after:h-[2px] after:w-full 
         after:bg-background group-hover:bg-indigo-400"
-          style={{ y: mouseY }}
-          transition={{ duration: 0.5 }}
+          animate={{ y: mouseY }}
+          transition={{ duration: 0.3 }}
         ></motion.div>
 
         {/* Gradient overlay */}
@@ -79,25 +79,26 @@ export default function Compare() {
           className="absolute h-full w-full
         bg-gradient-to-b from-indigo-400/40 to-transparent
         "
-        style={{
+          animate={{
             clipPath: `inset(${mouseY}px 0 0  )`,
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
         ></motion.div>
 
         {/* Text shadow effect */}
-        <div
+        <motion.div
           className="pointer-events-none absolute 
         flex h-full w-full select-none items-center justify-center p-12
         "
-          style={{
+          animate={{
             clipPath: `inset(${mouseY}px 0 0  )`,
           }}
+          transition={{ duration: 0.3 }}
         >
           <p className="m-0 font-mono text-background leading-relaxed [text-shadow:_-1px_-1px_0_theme(colors.indigo.400),_1px_-1px_0_theme(colors.indigo.400),_-1px_1px_0_theme(colors.indigo.400),_1px_1px_0_theme(colors.indigo.400)]">
             I like to make things interactive.
           </p>
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );

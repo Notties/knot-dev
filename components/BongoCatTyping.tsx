@@ -140,10 +140,11 @@ export default function BongoCatTyping() {
           <div className="w-full flex flex-col justify-start items-center gap-3">
             <span
               className="text-xs sm:text-base text-start text-foreground/25
-              w-full font-bold"
+              w-full font-bold "
             >
               {isComplete ? (
-                <span className="text-blue-500 font-medium text-xs sm:text-base flex gap-1">
+                <span className="text-blue-500 font-medium text-xs sm:text-base flex gap-1
+                transition-all duration-300">
                   Holy cow! Your time is{" "}
                   <p className="underline">{calculateTime()}</p> seconds
                 </span>
@@ -154,7 +155,7 @@ export default function BongoCatTyping() {
                   return (
                     <span
                       key={index}
-                      className={`${
+                      className={`transition-all duration-300 ${
                         isTyped
                           ? isCorrect
                             ? "text-black"
