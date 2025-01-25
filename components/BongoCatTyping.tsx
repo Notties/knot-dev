@@ -205,7 +205,7 @@ export default function BongoCatTyping() {
               <p className="text-[12px] text-black">restart</p>
             </div>
             <div>
-              <p className="text-[12px] text-black">
+              <p className="text-[12px] text-black font-mono">
                 {isPasted ? "😏 " : ""}{(currentTime / 1000).toFixed(3)}s
               </p>
             </div>
@@ -216,7 +216,7 @@ export default function BongoCatTyping() {
             height={100}
             className="-rotate-[0.3deg] absolute 
             w-[5rem] 
-            top-[13px] right-[25px]
+            top-[12px] right-[25px]
             sm:top-[28px] sm:right-[50px] sm:w-[100px]"
             src={catImage}
             priority
