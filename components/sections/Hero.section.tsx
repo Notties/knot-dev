@@ -52,7 +52,7 @@ export default function Hero() {
         bg-slate-100/30 backdrop-blur-md shadow-sm flex justify-center items-center
         pointer-events-none "
         >
-          <p className="text-xs text-gray">{time} GMT+7</p>
+          <p className="text-xs text-gray dark:text-black-full/80">{time} GMT+7</p>
         </div>
 
         {/* Clouds */}
@@ -62,7 +62,8 @@ export default function Hero() {
           alt="cloud"
           draggable="false"
           className={`absolute top-0 right-0 size-80 animate-cloud group-hover:opacity-0 transition-all
-          blur-sm z-20 pointer-events-none ${showClouds ? "opacity-75" : "opacity-0"} `}
+          blur-sm z-20 pointer-events-none ${showClouds ? "opacity-75" : "opacity-0"} 
+          dark:opacity-20`}
           src="/cloud.png"
         />
         {/* Plane */}
@@ -89,7 +90,7 @@ export default function Hero() {
         {/* Divider */}
         <div
           className="absolute bottom-0 h-[4rem] w-full 
-        bg-gradient-to-t from-white pointer-events-none z-30"
+        bg-gradient-to-t from-white dark:from-black-full pointer-events-none z-30"
         ></div>
       </div>
 
@@ -112,7 +113,7 @@ export default function Hero() {
           <div className="flex flex-col justify-center items-start">
             {/* My name */}
             <div className="flex h-full justify-center items-end">
-              <span className="font-semibold text-black text-xl flex gap-1">
+              <span className="font-semibold text-inherit text-xl flex gap-1">
                 Hi, I&apos;m Knot <p className=" hover:scale-125 hover:rotate-12 transition-all duration-300">👋</p>
               </span>
             </div>
@@ -137,7 +138,7 @@ export default function Hero() {
       intersect:motion-preset-slide-up
       motion-duration-[1s] motion-opacity-in-0 "
       >
-        <p className="text-black text-[0.9rem]">
+        <p className="text-inherit text-[0.9rem]">
           I&apos;m a software developer with 1 year of experience. I work across
           both front-end and back-end development, focusing on creating
           functional and user-friendly applications.

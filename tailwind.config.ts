@@ -35,6 +35,7 @@ export default {
         },
         black: {
           DEFAULT: "#313131",
+          full: "#0A0A0A",
         },
         card: {
           DEFAULT: "hsl(var(--card))",

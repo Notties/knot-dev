@@ -8,7 +8,7 @@ export default async function page() {
   return (
     <article className="flex flex-col items-center justify-center px-[1.5rem] ">
       <div className="max-w-custom flex flex-col gap-[1rem]  w-full">
-        <h1 className="text-black text-xl font-extrabold">My blog</h1>
+        <h1 className="text-inherit text-xl font-extrabold">My blog</h1>
         <PostsWithSearch posts={publishedPosts} />
       </div>
     </article>

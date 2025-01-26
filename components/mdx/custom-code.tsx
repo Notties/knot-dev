@@ -23,7 +23,8 @@ const CustomCode = (props: any) => {
         <div className="flex absolute right-2 top-[5px] justify-between items-center">
           <button
             type="button"
-            className="text-gray-300 bg-transparent border rounded-md backdrop-blur-md p-2 hover:text-input"
+            className="text-gray-300 bg-transparent border rounded-md backdrop-blur-md p-2 
+            hover:text-input dark:hover:text-inherit"
             onClick={handleCopy}
           >
             {copied ? (
@@ -39,10 +40,10 @@ const CustomCode = (props: any) => {
           className={`${
             props.className || ""
           } border-none h-full p-4  overflow-auto
-          m-0 bg-slate-50/50 not-prose text-sm`}
+          m-0 bg-slate-50/50 dark:bg-inherit not-prose text-sm`}
         >
           {/* Render the code without applying inline code styles */}
-          <code className="whitespace-pre text-black">{props.children}</code>
+          <code className="whitespace-pre text-black dark:text-inherit">{props.children}</code>
         </pre>
       </div>
     </div>

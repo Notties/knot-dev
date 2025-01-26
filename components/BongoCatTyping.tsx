@@ -6,6 +6,7 @@ import Image from "next/image";
 import catNone from "@/public/images/cat/none.png";
 import catLeft from "@/public/images/cat/left.png";
 import catRight from "@/public/images/cat/right.png";
+import Badge from "./Badge";
 
 export default function BongoCatTyping() {
   const [show, setShow] = useState(false);
@@ -58,9 +59,9 @@ export default function BongoCatTyping() {
   const handlePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
     e.preventDefault();
     setIsPasted(true);
-  
-    const pastedText = e.clipboardData.getData('text');
-  
+
+    const pastedText = e.clipboardData.getData("text");
+
     setUserInput(`${pastedText} HURRY AND DELETE ME!!`);
   };
 
@@ -143,8 +144,10 @@ export default function BongoCatTyping() {
               w-full font-bold "
             >
               {isComplete ? (
-                <span className="text-blue-500 font-medium text-xs sm:text-base flex gap-1
-                transition-all duration-300">
+                <span
+                  className="text-blue-500 font-medium text-xs sm:text-base flex gap-1
+                transition-all duration-300"
+                >
                   Holy cow! Your time is{" "}
                   <p className="underline">{calculateTime()}</p> seconds
                 </span>
@@ -194,20 +197,15 @@ export default function BongoCatTyping() {
             <div
               className={`flex justify-center items-center gap-[5px] font-mono`}
             >
-              <div
-                className="flex border rounded-sm justify-center items-center 
-                px-[0.4rem] py-[0.1px] bg-gray-50 text-center cursor-pointer"
-                onClick={handleRestart}
-              >
-                <p className="text-[12px] text-black">TAB</p>
-              </div>
+              <Badge text="TAB" className="py-[0.1px] text-[12px] rounded-sm" />
 
-              <p className="text-[12px] text-black">-</p>
-              <p className="text-[12px] text-black">restart</p>
+              <p className="text-[12px] text-inherit">-</p>
+              <p className="text-[12px] text-inherit">restart</p>
             </div>
             <div>
-              <p className="text-[12px] text-black font-mono">
-                {isPasted ? "😏 " : ""}{(currentTime / 1000).toFixed(3)}s
+              <p className="text-[12px] text-inherit font-mono">
+                {isPasted ? "😏 " : ""}
+                {(currentTime / 1000).toFixed(3)}s
               </p>
             </div>
           </div>
@@ -218,7 +216,8 @@ export default function BongoCatTyping() {
             className="-rotate-[0.3deg] absolute 
             w-[5rem] 
             top-[12px] right-[25px]
-            sm:top-[28px] sm:right-[50px] sm:w-[100px]"
+            sm:top-[28px] sm:right-[50px] sm:w-[100px]
+            dark:sm:top-[26px] dark:top-[10px]"
             src={catImage}
             priority
           />

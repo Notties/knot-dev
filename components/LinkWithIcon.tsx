@@ -17,7 +17,7 @@ export default function LinkWithIcon({
   return (
     <Link
       href={href}
-      className="link flex items-center gap-2 text-gray hover:text-black transition-all duration-300"
+      className="link flex items-center gap-2 text-gray hover:text-inherit transition-all duration-300"
     >
       {position === "left" && icon}
       <span className="text-sm">{text}</span>

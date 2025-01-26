@@ -58,12 +58,14 @@ export default async function Page({
   return (
     <article className="flex flex-col items-center justify-center px-[1.5rem] ">
       <div className="max-w-custom flex flex-col gap-[1rem] w-full">
-        <LinkWithIcon
-          href="/blog"
-          position="left"
-          icon={<ArrowLeftIcon className="size-4" />}
-          text="back to blog"
-        />
+        <div className="w-[7rem]">
+          <LinkWithIcon
+            href="/blog"
+            position="left"
+            icon={<ArrowLeftIcon className="size-4" />}
+            text="back to blog"
+          />
+        </div>
 
         {post.metadata.image && (
           <div className="relative mb-6 h-[15rem] w-full overflow-hidden rounded-lg border flex justify-center items-center">
@@ -77,7 +79,7 @@ export default async function Page({
         )}
 
         <header className="w-full">
-          <h1 className="text-black text-xl font-extrabold">
+          <h1 className="text-inherit text-xl font-extrabold">
             {post.metadata.title}
           </h1>
           <p className="mt-2 text-xs text-muted-foreground">
@@ -85,7 +87,7 @@ export default async function Page({
           </p>
         </header>
 
-        <main className="prose prose-sm xs:prose-base">
+        <main className="prose dark:prose-invert prose-sm xs:prose-base">
           <MDXContent />
         </main>
       </div>

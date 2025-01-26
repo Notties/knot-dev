@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { ViewTransitions } from "next-view-transitions";
+import Providers from "./providers";
 
 const noto_Sans_Thai = Noto_Sans_Thai({
   subsets: ["latin", "thai"],
@@ -26,11 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en">
-        <body className={`${noto_Sans_Thai.className} antialiased`}>
-          <Navbar />
-          {children}
-          <Footer />
+      <html lang="en" suppressHydrationWarning>
+        <body className={`${noto_Sans_Thai.className} antialiased`} >
+          <Providers>
+            <Navbar />
+            {children}
+            <Footer />
+          </Providers>
         </body>
       </html>
     </ViewTransitions>
