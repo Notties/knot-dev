@@ -12,8 +12,8 @@ const Card: React.FC<CardProps> = ({ title, imgSrc }) => {
     <div
       className="border w-full flex flex-col cursor-pointer
     justify-center items-center rounded-lg hover:shadow-sm transition-all duration-300
-    gap-2 grayscale hover:grayscale-0 
-    h-[4rem] xs:h-[4.5rem] group
+    gap-2 grayscale hover:grayscale-0
+    h-[4rem] xs:h-[4.5rem] group bg-white dark:bg-black-full
     "
     >
       <Image

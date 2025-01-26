@@ -161,9 +161,9 @@ export default function BongoCatTyping() {
                       className={`transition-all duration-300 ${
                         isTyped
                           ? isCorrect
-                            ? "text-black"
+                            ? "text-black dark:text-white"
                             : "text-red-500"
-                          : "text-foreground/25"
+                          : "text-foreground/25 dark:text-foreground/40"
                       }`}
                     >
                       {char}

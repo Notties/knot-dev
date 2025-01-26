@@ -14,16 +14,15 @@ export default function MapComponent({ mapKey }: MapComponentProps) {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<maplibregl.Map | null>(null);
 
+  const mapStyle = resolvedTheme === "dark" ? "/map/alidade_smooth_dark.json" : "/map/alidade_smooth.json";
+
   useEffect(() => {
     if (!mapContainer.current) return;
 
     if (!map.current) {
       map.current = new maplibregl.Map({
         container: mapContainer.current,
-        style:
-          resolvedTheme === "dark"
-            ? "/map/alidade_smooth_dark.json"
-            : "/map/alidade_smooth.json",
+        style: mapStyle,
         center: [100.5018, 13.7563],
         zoom: 5,
         attributionControl: false,
@@ -95,18 +94,14 @@ export default function MapComponent({ mapKey }: MapComponentProps) {
       });
     }
 
-    map.current.setStyle(
-      resolvedTheme === "dark"
-        ? "/map/alidade_smooth_dark.json"
-        : "/map/alidade_smooth.json"
-    );
+    map.current.setStyle(mapStyle);
 
-  }, [mapKey, resolvedTheme]);
+  }, [mapKey, mapStyle, resolvedTheme]);
 
   return (
     <div
       ref={mapContainer}
-      className="w-full h-[12rem] rounded-t-[0.7rem] border-x border-t"
+      className="w-full h-[13rem] rounded-t-[0.7rem] border-x border-t"
     />
   );
 }

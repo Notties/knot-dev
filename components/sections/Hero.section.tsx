@@ -5,6 +5,7 @@ import MapComponent from "@/components/MapComponent";
 import Image from "next/image";
 import Card from "@/components/Cards";
 import { skills } from "@/data/skills";
+import TextFlip from "@/components/motion/TextFlip";
 
 export default function Hero() {
   const [time, setTime] = useState("");
@@ -52,7 +53,7 @@ export default function Hero() {
         bg-slate-100/30 backdrop-blur-md shadow-sm flex justify-center items-center
         pointer-events-none "
         >
-          <p className="text-xs text-gray dark:text-black-full/80">{time} GMT+7</p>
+          <p className="text-xs text-gray dark:text-black-full">{time} GMT+7</p>
         </div>
 
         {/* Clouds */}
@@ -62,7 +63,9 @@ export default function Hero() {
           alt="cloud"
           draggable="false"
           className={`absolute top-0 right-0 size-80 animate-cloud group-hover:opacity-0 transition-all
-          blur-sm z-20 pointer-events-none ${showClouds ? "opacity-75" : "opacity-0"} 
+          blur-sm z-20 pointer-events-none ${
+            showClouds ? "opacity-75" : "opacity-0"
+          } 
           dark:opacity-20`}
           src="/cloud.png"
         />
@@ -114,19 +117,18 @@ export default function Hero() {
             {/* My name */}
             <div className="flex h-full justify-center items-end">
               <span className="font-semibold text-inherit text-xl flex gap-1">
-                Hi, I&apos;m Knot <p className=" hover:scale-125 hover:rotate-12 transition-all duration-300">👋</p>
+                Hi, I&apos;m Knot{" "}
+                <p className=" hover:scale-125 hover:rotate-12 transition-all duration-300">
+                  👋
+                </p>
               </span>
             </div>
             {/* My status */}
-            <div className="flex flex-col gap-[0.1rem] justify-start items-start text-center h-full">
-              <div className="flex gap-2">
-                <div className="h-2 w-2 bg-green-500 rounded-full mt-[0.3rem]"></div>
-                <p className="text-gray text-sm">Available for work</p>
-              </div>
-              <div className="flex w-full">
-                <div className="w-[1.1rem]"></div>
-                <div className="w-full border-t border-dashed"></div>
-              </div>
+            <div className="h-full">
+            <TextFlip
+              defaultText="Available for work"
+              hoverText="Reach out"
+            />
             </div>
           </div>
         </div>
@@ -148,7 +150,7 @@ export default function Hero() {
       {/* My skills */}
       <div
         className="mt-[1.5rem] grid grid-cols-4 justify-center items-center w-full gap-2
-        intersect:motion-preset-slide-up motion-opacity-in-0 
+        intersect:motion-preset-slide-up motion-opacity-in-0
       motion-duration-[1s]"
       >
         {skills.map((skill) => (

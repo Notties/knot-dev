@@ -7,12 +7,12 @@ export default function UI() {
     <>
       <div
         className="relative flex flex-col justify-start items-start gap-3 w-full 
-      intersect:motion-preset-slide-up
+      intersect:motion-preset-slide-up 
       motion-duration-[1s] motion-opacity-in-0"
       >
         <Badge text="UI" />
 
-        <div className="w-full grid grid-cols-5 gap-3">
+        <div className="w-full grid grid-cols-5 gap-3 bg-white dark:bg-black-full">
           <div className="h-[12rem] border rounded-md w-full col-span-5 sm:col-span-3 p-6">
             <Compare />
           </div>
