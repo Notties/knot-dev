@@ -11,7 +11,7 @@ export default async function Post() {
     <section>
       <div className="flex flex-col justify-start items-start gap-3">
         <div className="w-full flex justify-between items-center">
-          <Badge text="Recent Posts" />
+          <Badge text="Blogs" />
 
           <LinkWithIcon
             href="/blog"

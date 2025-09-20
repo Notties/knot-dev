@@ -12,16 +12,8 @@ export default function UserInterface() {
       >
         <Badge text="UI" />
 
-        <div className="w-full grid grid-cols-5 gap-3 bg-white dark:bg-black-full">
-          <div className="h-[12rem] border rounded-md w-full col-span-5 sm:col-span-3 p-6">
-            <Compare />
-          </div>
-          <div
-            className="h-[12rem] border rounded-md w-full col-span-5 sm:col-span-2
-          flex justify-center items-center"
-          >
-            <p className="text-sm text-gray">Coming soon..</p>
-          </div>
+        <div className="h-48 border rounded-md w-full col-span-5 sm:col-span-3 p-6">
+          <Compare />
         </div>
 
         {/* Typing test */}

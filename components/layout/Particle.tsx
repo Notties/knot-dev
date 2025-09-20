@@ -15,7 +15,7 @@ export function Particle() {
   return (
     <Particles
       className="absolute inset-0 z-[-999]"
-      quantity={15}
+      quantity={20}
       ease={80}
       color={color}
       refresh

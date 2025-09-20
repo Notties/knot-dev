@@ -20,12 +20,12 @@ export default function PostsWithSearch({ posts }: Props) {
   const resetFilter = () => setQuery("");
 
   return (
-    <div className="flex flex-col gap-[1rem]">
-      <div className="flex items-center gap-[0.5rem] mb-[1rem]">
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center gap-2 mb-4">
         <Input
           type="text"
           placeholder="Search something..."
-          className="!text-xs xs:!text-sm"
+          className="text-xs! xs:text-sm!"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />

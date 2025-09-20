@@ -75,9 +75,9 @@ export default async function Page({
   const { default: MDXContent } = await import(`@/content/blogs/${slug}.mdx`);
 
   return (
-    <article className="flex flex-col items-center justify-center px-[1.5rem] ">
-      <div className="max-w-custom flex flex-col gap-[1rem] w-full">
-        <div className="w-[7rem]">
+    <article className="flex flex-col items-center justify-center px-6 ">
+      <div className="max-w-custom flex flex-col gap-4 w-full">
+        <div className="w-28">
           <LinkWithIcon
             href="/blog"
             position="left"
@@ -87,7 +87,7 @@ export default async function Page({
         </div>
 
         {post.metadata.image && (
-          <div className="relative mb-6 h-[15rem] w-full overflow-hidden rounded-lg border flex justify-center items-center">
+          <div className="relative mb-6 h-60 w-full overflow-hidden rounded-lg border flex justify-center items-center">
             <Image
               src={post.metadata.image}
               alt={post.metadata.title || ""}

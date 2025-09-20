@@ -10,11 +10,11 @@ export default function Badge({ text, className }: Props) {
     <div
       className={cn(
         `flex border rounded-md justify-center items-center px-[0.4rem] py-[0.3rem] bg-gray-50 
-        dark:bg-gray-dark`, 
+        dark:bg-gray-dark text-xs `, 
         className
       )}
     >
-      <p className="text-xs text-gray dark:text-white/60">{text}</p>
+      <p className=" text-gray dark:text-white/60">{text}</p>
     </div>
   );
 }

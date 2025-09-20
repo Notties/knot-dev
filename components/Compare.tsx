@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 import { useState } from "react";
 
 export default function Compare() {
@@ -26,8 +26,8 @@ export default function Compare() {
         after:absolute before:absolute after:w-[2px] 
         after:h-3 before:w-3 before:h-[2px] 
         after:bg-indigo-400 before:bg-indigo-400 
-        after:-top-[0px] after:-left-[0px] 
-        before:-top-[0px] before:-left-[0px] top-0 left-0"
+        after:top-[0px] after:left-[0px] 
+        before:top-[0px] before:left-[0px] top-0 left-0"
         ></div>
         {/* border top right */}
         <div
@@ -36,8 +36,8 @@ export default function Compare() {
         after:absolute before:absolute after:w-[2px] 
         after:h-3 before:w-3 before:h-[2px] 
         after:bg-indigo-400 before:bg-indigo-400 
-        after:-top-[0px] after:-right-[0px] 
-        before:-top-[0px] before:-right-[0px] top-0 right-0"
+        after:top-[0px] after:right-[0px] 
+        before:top-[0px] before:right-[0px] top-0 right-0"
         ></div>
         {/* border bottom left */}
         <div
@@ -46,8 +46,8 @@ export default function Compare() {
         after:absolute before:absolute after:w-[2px] 
         after:h-3 before:w-3 before:h-[2px] 
         after:bg-indigo-400 before:bg-indigo-400 
-        after:-bottom-[0px] after:-left-[0px] 
-        before:-bottom-[0px] before:-left-[0px] bottom-0 left-0"
+        after:bottom-[0px] after:left-[0px] 
+        before:bottom-[0px] before:left-[0px] bottom-0 left-0"
         ></div>
         {/* border bottom right */}
         <div
@@ -56,13 +56,14 @@ export default function Compare() {
         after:absolute before:absolute after:w-[2px] 
         after:h-3 before:w-3 before:h-[2px] 
         after:bg-indigo-400 before:bg-indigo-400 
-        after:-bottom-[0px] after:-right-[0px] 
-        before:-bottom-[0px] before:-right-[0px] right-0 bottom-0"
+        after:bottom-[0px] after:right-[0px] 
+        before:bottom-[0px] before:right-[0px] right-0 bottom-0"
         ></div>
 
-        <p className="m-0 font-mono text-foreground leading-relaxed">
-          I like to make things interactive.
-        </p>
+        <span className="m-0 flex flex-col font-mono text-foreground leading-relaxed">
+          <p>I like to make things</p>
+          <p>interactive. :)</p>
+        </span>
 
         {/* Animated line */}
         <motion.div
@@ -77,7 +78,7 @@ export default function Compare() {
         {/* Gradient overlay */}
         <motion.div
           className="absolute h-full w-full
-        bg-gradient-to-b from-indigo-400/40 to-transparent
+        bg-linear-to-b from-indigo-400/40 to-transparent
         "
           animate={{
             clipPath: `inset(${mouseY}px 0 0  )`,
@@ -95,9 +96,10 @@ export default function Compare() {
           }}
           transition={{ duration: 0.3 }}
         >
-          <p className="m-0 font-mono text-background leading-relaxed [text-shadow:_-1px_-1px_0_theme(colors.indigo.400),_1px_-1px_0_theme(colors.indigo.400),_-1px_1px_0_theme(colors.indigo.400),_1px_1px_0_theme(colors.indigo.400)]">
-            I like to make things interactive.
-          </p>
+          <span className="flex flex-col m-0 font-mono text-background leading-relaxed [text-shadow:-1px_-1px_0_var(--color-indigo-400),1px_-1px_0_var(--color-indigo-400),-1px_1px_0_var(--color-indigo-400),1px_1px_0_var(--color-indigo-400)]">
+            <p>I like to make things</p>
+          <p>interactive. :)</p>
+          </span>
         </motion.div>
       </motion.div>
     </div>

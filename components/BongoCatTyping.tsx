@@ -129,100 +129,98 @@ export default function BongoCatTyping() {
   }, [userInput, isComplete]);
 
   return (
-    <>
-      <div className="relative flex flex-col justify-start items-start gap-3 w-full">
-        {/* Typing test */}
-        <div
-          className="border h-auto rounded-md w-full gap-3
+    <div className="relative flex flex-col justify-start items-start gap-3 w-full">
+      {/* Typing test */}
+      <div
+        className="border h-auto rounded-md w-full gap-3
         flex flex-col justify-start items-center text-center 
-        p-[1rem] pb-[0.7rem] 
-        sm:p-[2rem] sm:pb-[1.1rem]"
-        >
-          <div className="w-full flex flex-col justify-start items-center gap-3">
-            <span
-              className="text-xs sm:text-base text-start text-foreground/25
+        p-4 pb-[0.7rem] 
+        sm:p-8 sm:pb-[1.1rem]"
+      >
+        <div className="w-full flex flex-col justify-start items-center gap-3">
+          <span
+            className="text-xs sm:text-base text-start text-foreground/25
               w-full font-bold "
-            >
-              {isComplete ? (
-                <span
-                  className="text-blue-500 font-medium text-xs sm:text-base flex gap-1
+          >
+            {isComplete ? (
+              <span
+                className="text-blue-500 font-medium text-xs sm:text-base flex gap-1
                 transition-all duration-300"
-                >
-                  Holy cow! Your time is{" "}
-                  <p className="underline">{calculateTime()}</p> seconds
-                </span>
-              ) : (
-                targetText.split("").map((char, index) => {
-                  const isCorrect = userInput[index] === char;
-                  const isTyped = index < userInput.length;
-                  return (
-                    <span
-                      key={index}
-                      className={`transition-all duration-300 ${
-                        isTyped
-                          ? isCorrect
-                            ? "text-black dark:text-white"
-                            : "text-red-500"
-                          : "text-foreground/25 dark:text-foreground/40"
-                      }`}
-                    >
-                      {char}
-                    </span>
-                  );
-                })
-              )}
-            </span>
+              >
+                Holy cow! Your time is{" "}
+                <p className="underline">{calculateTime()}</p> seconds
+              </span>
+            ) : (
+              targetText.split("").map((char, index) => {
+                const isCorrect = userInput[index] === char;
+                const isTyped = index < userInput.length;
+                return (
+                  <span
+                    key={index}
+                    className={`transition-all duration-300 ${
+                      isTyped
+                        ? isCorrect
+                          ? "text-black dark:text-white"
+                          : "text-red-500"
+                        : "text-foreground/25 dark:text-foreground/40"
+                    }`}
+                  >
+                    {char}
+                  </span>
+                );
+              })
+            )}
+          </span>
 
-            <Input
-              ref={inputRef}
-              onFocus={handleFocus}
-              onKeyDown={handleKeyDown}
-              onBlur={handleBlur}
-              onPaste={handlePaste}
-              type="text"
-              value={isComplete ? "Bongo cat applauds you." : userInput}
-              onChange={handleInputChange}
-              disabled={isComplete}
-              className="!text-[13px] h-[3.7rem] shadow-none border-[3px] border-black
+          <Input
+            ref={inputRef}
+            onFocus={handleFocus}
+            onKeyDown={handleKeyDown}
+            onBlur={handleBlur}
+            onPaste={handlePaste}
+            type="text"
+            value={isComplete ? "Bongo cat applauds you." : userInput}
+            onChange={handleInputChange}
+            disabled={isComplete}
+            className="text-[13px]! h-[3.7rem] shadow-none border-[3px] border-black
               focus-visible:ring-0 disabled:opacity-100 disabled:text-gray"
-              placeholder="Start typing here..."
-            />
-          </div>
-          <div
-            className={`w-full flex justify-between items-center 
+            placeholder="Start typing here..."
+          />
+        </div>
+        <div
+          className={`w-full flex justify-between items-center 
             transition-all duration-500 font-medium
               ${show ? "opacity-100" : "opacity-0"}
             `}
+        >
+          <div
+            className={`flex justify-center items-center gap-[5px] font-mono`}
           >
-            <div
-              className={`flex justify-center items-center gap-[5px] font-mono`}
-            >
-              <Badge text="TAB" className="py-[0.1px] text-[12px] rounded-sm" />
+            <Badge text="TAB" className="py-[0.1px] text-[12px] rounded-sm" />
 
-              <p className="text-[12px] text-inherit">-</p>
-              <p className="text-[12px] text-inherit">restart</p>
-            </div>
-            <div>
-              <p className="text-[12px] text-inherit font-mono">
-                {isPasted ? "😏 " : ""}
-                {(currentTime / 1000).toFixed(3)}s
-              </p>
-            </div>
+            <p className="text-[12px] text-inherit">-</p>
+            <p className="text-[12px] text-inherit">restart</p>
           </div>
-          <Image
-            alt="Bongo Cat"
-            width={100}
-            height={100}
-            className="-rotate-[0.3deg] absolute 
-            w-[5rem] 
+          <div>
+            <p className="text-[12px] text-inherit font-mono">
+              {isPasted ? "😏 " : ""}
+              {(currentTime / 1000).toFixed(3)}s
+            </p>
+          </div>
+        </div>
+        <Image
+          alt="Bongo Cat"
+          width={100}
+          height={100}
+          className="-rotate-[0.3deg] absolute 
+            w-20 
             top-[12px] right-[25px]
             sm:top-[28px] sm:right-[50px] sm:w-[100px]
             dark:sm:top-[26px] dark:top-[10px]"
-            src={catImage}
-            priority
-          />
-        </div>
+          src={catImage}
+          priority
+        />
       </div>
-    </>
+    </div>
   );
 }

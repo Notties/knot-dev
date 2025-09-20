@@ -15,8 +15,8 @@ export default function Posts({ posts }: Props) {
       <ul className="flex flex-col gap-3">
         {posts.map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`}>
-            <Card className="rounded-lg">
-              <div className="flex flex-row justify-between p-[1rem] xs:p-[1.2rem] items-center gap-5">
+            <Card className="rounded-lg shadow-none">
+              <div className="flex flex-row justify-between p-4 xs:p-[1.2rem] items-center gap-5">
                 <div className="w-full ">
                   <span
                     className="flex justify-start items-start flex-col 
@@ -41,7 +41,7 @@ export default function Posts({ posts }: Props) {
                 </div>
 
                 <div
-                  className="w-[6rem]  border rounded-md 
+                  className="w-24  border rounded-md 
                   flex justify-center items-center"
                 >
                   <Image

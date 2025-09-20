@@ -101,7 +101,7 @@ export default function MapComponent({ mapKey }: MapComponentProps) {
   return (
     <div
       ref={mapContainer}
-      className="w-full h-[13rem] rounded-t-[0.7rem] border-x border-t"
+      className="w-full h-52 rounded-t-[0.7rem] border-x border-t"
     />
   );
 }

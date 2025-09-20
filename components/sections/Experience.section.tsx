@@ -1,15 +1,18 @@
-"use client";
-
 import Badge from "@/components/Badge";
+import Timeline from "@/components/Timeline";
+import { careers } from "@/data/career";
+
 
 export default function Experience() {
   return (
     <section>
       <div className="flex flex-col justify-start items-start gap-3">
         <Badge text="Experience" />
-        <div className="border h-[20rem] rounded-md w-full 
-        flex justify-center items-center text-center">
-            <p className="text-sm text-gray">Coming soon..</p>
+        <div
+          className="border rounded-md w-full 
+        flex justify-center"
+        >
+          <Timeline experience={careers}/>
         </div>
       </div>
     </section>

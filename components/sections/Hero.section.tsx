@@ -50,7 +50,7 @@ export default function Hero() {
         {/* Time zone */}
         <div
           className="absolute top-[0.7rem] right-[0.7rem] py-1 px-3 rounded-sm
-        bg-slate-100/30 backdrop-blur-md shadow-sm flex justify-center items-center
+        bg-slate-100/30 backdrop-blur-md shadow-xs flex justify-center items-center
         pointer-events-none "
         >
           <p className="text-xs text-gray dark:text-black-full">{time} GMT+7</p>
@@ -63,7 +63,7 @@ export default function Hero() {
           alt="cloud"
           draggable="false"
           className={`absolute top-0 right-0 size-80 animate-cloud group-hover:opacity-0 transition-all
-          blur-sm z-20 pointer-events-none ${
+          blur-xs z-20 pointer-events-none ${
             showClouds ? "opacity-75" : "opacity-0"
           } 
           dark:opacity-20`}
@@ -92,8 +92,8 @@ export default function Hero() {
 
         {/* Divider */}
         <div
-          className="absolute bottom-0 h-[4rem] w-full 
-        bg-gradient-to-t from-white dark:from-black-full pointer-events-none z-30"
+          className="absolute bottom-0 h-16 w-full 
+        bg-linear-to-t from-white dark:from-black-full pointer-events-none z-30"
         ></div>
       </div>
 
@@ -106,7 +106,7 @@ export default function Hero() {
         <div className="flex w-full gap-5">
           {/* My picture */}
           <Image
-            className="border w-[5rem] h-[5rem] rounded-full "
+            className="border w-20 h-20 rounded-full "
             src={"/icons/me.png"}
             width={100}
             height={100}
@@ -136,12 +136,12 @@ export default function Hero() {
 
       {/* My introduction */}
       <div
-        className="mt-[1.5rem] w-full
+        className="mt-6 w-full
       intersect:motion-preset-slide-up
       motion-duration-[1s] motion-opacity-in-0 "
       >
         <p className="text-inherit text-[0.9rem]">
-          I&apos;m a software developer with 1 year of experience. I work across
+          Full Stack Developer with 2 year of experience. I work across
           both front-end and back-end development, focusing on creating
           functional and user-friendly applications.
         </p>
@@ -149,7 +149,7 @@ export default function Hero() {
 
       {/* My skills */}
       <div
-        className="mt-[1.5rem] grid grid-cols-4 justify-center items-center w-full gap-2
+        className="mt-6 grid grid-cols-4 justify-center items-center w-full gap-2
         intersect:motion-preset-slide-up motion-opacity-in-0
       motion-duration-[1s]"
       >
