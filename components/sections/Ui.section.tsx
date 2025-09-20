@@ -2,9 +2,9 @@ import BongoCatTyping from "@/components/BongoCatTyping";
 import Compare from "@/components/Compare";
 import Badge from "@/components/Badge";
 
-export default function UI() {
+export default function UserInterface() {
   return (
-    <>
+    <section>
       <div
         className="relative flex flex-col justify-start items-start gap-3 w-full 
       intersect:motion-preset-slide-up 
@@ -27,6 +27,6 @@ export default function UI() {
         {/* Typing test */}
         <BongoCatTyping />
       </div>
-    </>
+    </section>
   );
 }

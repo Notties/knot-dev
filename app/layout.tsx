@@ -17,7 +17,30 @@ export const metadata: Metadata = {
     default: "Knot",
   },
   description:
-    "Software developers in Thailand specializing in creating web applications, mobile applications",
+    "Software developer in Thailand specializing in creating web applications, mobile applications",
+  alternates: {
+    canonical: `https://knot-dev.tech`,
+  },
+  openGraph: {
+    type: "website",
+    locale: "th_TH",
+    siteName: "Knot",
+    title: {
+      template: "%s - Knot",
+      default: "Knot",
+    },
+    description:
+      "Software developer in Thailand specializing in creating web applications, mobile applications",
+    images: [
+      {
+        url: "https://knot-dev.tech/og-image.png",
+        alt: "Software developer in Thailand specializing in creating web applications, mobile applications",
+        secureUrl: "https://knot-dev.tech/og-image.png",
+        width: 800,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +51,7 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
-        <body className={`${noto_Sans_Thai.className} antialiased`} >
+        <body className={`${noto_Sans_Thai.className} antialiased`}>
           <Providers>
             <Navbar />
             {children}

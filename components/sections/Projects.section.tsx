@@ -4,7 +4,7 @@ import Badge from "@/components/Badge";
 
 export default function Projects() {
   return (
-    <>
+    <section>
       <div className="flex flex-col justify-start items-start gap-3">
         <Badge text="Recent Projects" />
         <div
@@ -14,6 +14,6 @@ export default function Projects() {
           <p className="text-sm text-gray">Coming soon..</p>
         </div>
       </div>
-    </>
+    </section>
   );
 }

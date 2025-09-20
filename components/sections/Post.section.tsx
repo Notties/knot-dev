@@ -8,7 +8,7 @@ export default async function Post() {
   const posts = await getAllPosts(2);
 
   return (
-    <>
+    <section>
       <div className="flex flex-col justify-start items-start gap-3">
         <div className="w-full flex justify-between items-center">
           <Badge text="Recent Posts" />
@@ -28,6 +28,6 @@ export default async function Post() {
           <Posts posts={posts} />
         </div>
       </div>
-    </>
+    </section>
   );
 }

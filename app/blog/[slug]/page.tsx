@@ -15,6 +15,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.metadata.title,
     description: post.metadata.description,
+    alternates: {
+      canonical: `https://knot-dev.tech/blog/${post.slug}`,
+    },
+    openGraph: {
+      type: "article",
+      locale: "th_TH",
+      siteName: "Knot",
+      title: "Blog",
+      description: post.metadata.description,
+      images: [
+        {
+          url: `https://knot-dev.tech/${post.metadata.image}`,
+          alt: post.metadata.title,
+          secureUrl: `https://knot-dev.tech/${post.metadata.image}`,
+          width: 800,
+          height: 630,
+        },
+      ],
+    },
   };
 }
 
@@ -48,9 +67,9 @@ export async function generateStaticParams() {
 
 export default async function Page({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const slug = (await params).slug;
   const post = await getPost(await params);
   const { default: MDXContent } = await import(`@/content/blogs/${slug}.mdx`);
