@@ -26,8 +26,8 @@ export default function CustomCode({
   };
 
   return (
-    <div className="relative group custom-code-block">
-      <div className="flex absolute right-2 top-[-2.1rem] justify-between items-center cursor-pointer">
+    <div className="relative group custom-code">
+      <div className="flex absolute right-2 top-[-1.6rem] justify-between items-center cursor-pointer">
         <button
           type="button"
           className="text-gray-300 bg-transparent border border-gray-600 rounded-md backdrop-blur-md p-1 
@@ -46,12 +46,12 @@ export default function CustomCode({
       <pre
         ref={codeRef}
         className={clsx(
-          "rounded-lg p-4 overflow-x-auto text-sm leading-relaxed",
-          "bg-gray-900 text-gray-100 ",
+          "rounded-lg p-4 !m-0 !text-base sm:!text-lg  leading-relaxed",
+          "!bg-gray-dark text-gray-100 ",
           `language-${language}`
         )}
       >
-        <code className="whitespace-pre-wrap ">{children}</code>
+        <code className="">{children}</code>
       </pre>
     </div>
   );

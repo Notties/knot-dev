@@ -130,7 +130,7 @@ export default async function ProductDetailPage({ params }) {
 }
 ```
 </FileName>
-
+<br />
 <FileName name="components/AddToCartButton.jsx">
 ```jsx
 "use client"; // 3. ปุ่มนี้ต้องมี State และ onClick เลยเป็น Client Component
@@ -161,7 +161,7 @@ export default function AddToCartButton({ productId }) {
 
 ### สรุปเปรียบเทียบ
 
-| คุณสมบัติ | Server Component (Default) | Client Component (`"use client"`) |
+| คุณสมบัติ | Server Component | Client Component |
 | :--- | :--- | :--- |
 | **ทำงานที่ไหน** | บน Server เท่านั้น | Server (SSR) และ Client (Hydration) |
 | **Interactive** | ❌ ไม่ได้ | ✅ ได้ (ใช้ `useState`, `useEffect`, `onClick`) |

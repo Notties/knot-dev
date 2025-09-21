@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin 'tailwindcss-animate';
 @plugin '@tailwindcss/typography';
 @plugin 'tailwindcss-motion';
@@ -83,6 +83,11 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
+  }
+
+  figure {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 }
 
@@ -183,17 +188,14 @@
   .animate-cloud {
     animation: cloud 30s linear infinite;
     animation-delay: 3s;
-    
   }
   .animate-plane {
     animation: plane 20s linear infinite;
     animation-delay: 3s;
-    
   }
   .animate-plane-shadow {
     animation: plane-shadow 20s linear infinite;
     animation-delay: 3s;
-    
   }
 }
 
@@ -202,9 +204,10 @@
     white-space: pre !important;
     tab-size: 2 !important;
     -moz-tab-size: 2 !important;
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Inconsolata, "Roboto Mono", monospace !important;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Inconsolata,
+      "Roboto Mono", monospace !important;
   }
-  
+
   .custom-code-block code {
     white-space: pre !important;
     tab-size: 2 !important;
@@ -212,5 +215,4 @@
     display: block !important;
     font-family: inherit !important;
   }
-
 }
