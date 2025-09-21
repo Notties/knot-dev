@@ -2,7 +2,7 @@ import LinkWithIcon from "@/components/LinkWithIcon";
 import { Badge } from "@/components/ui/badge";
 import { PostMetadata } from "@/lib/posts";
 import { formatDate } from "@/lib/utils";
-import { ArrowLeftIcon } from "lucide-react";
+import { ArrowLeftIcon, Shapes, Tags } from "lucide-react";
 import Image from "next/image";
 import { Metadata } from "next/types";
 import fs from "node:fs";
@@ -101,13 +101,25 @@ export default async function Page({
           </div>
         )}
 
-        <header className="w-full">
+        <header className="w-full flex flex-col gap-2 pb-4">
           <h1 className="text-inherit text-xl font-extrabold">
             {post.metadata.title}
           </h1>
-          <p className="mt-2 text-xs text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             {formatDate(post.metadata.publishDate ?? "")}
           </p>
+          {/* Category */}
+          {post.metadata.category && (
+            <div className="flex gap-2 justify-start items-center">
+              <Shapes
+                className="size-5 text-gray-700 dark:text-gray-400"
+                strokeWidth={1.5}
+              />
+              <p className="text-sm text-gray-700 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+                {post.metadata.category}
+              </p>
+            </div>
+          )}
         </header>
 
         <main className="prose dark:prose-invert prose-sm xs:prose-base">
@@ -117,9 +129,14 @@ export default async function Page({
         {/* Tags */}
         {post.metadata.tags && (
           <div className="flex flex-wrap justify-start items-center gap-2 py-[2rem]">
-            <span className="text-sm text-muted-foreground">Tags</span>
+            <Tags className="size-5 text-muted-foreground" />
+            <span className="text-sm text-muted-foreground ">Tags</span>
             {post.metadata.tags.map((tag) => (
-              <Badge variant={"secondary"} key={tag} className="text-xs shadow-none cursor-pointer font-normal">
+              <Badge
+                variant={"secondary"}
+                key={tag}
+                className="text-xs shadow-none cursor-pointer font-normal"
+              >
                 {tag}
               </Badge>
             ))}

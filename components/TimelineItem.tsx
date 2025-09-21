@@ -3,7 +3,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Badge } from "./ui/badge";
 import Icon from "./Icon";
 import { Career } from "@/types/career.type";
-import Image from "next/image";
 
 export default function TimelineItem({ experience }: { experience: Career }) {
   const { name, href, title, logo, start, end, description, links } =
@@ -17,7 +16,7 @@ export default function TimelineItem({ experience }: { experience: Career }) {
         className="absolute -left-[3rem] sm:-left-16 top-4 flex items-center justify-center rounded-full bg-white"
       >
         <Avatar className="size-10 sm:size-12 border">
-          <Image
+          <AvatarImage
             src={logo}
             alt={name}
             width={200}
@@ -38,9 +37,9 @@ export default function TimelineItem({ experience }: { experience: Career }) {
         <h2 className="font-semibold leading-none">{name}</h2>
         {title && <p className="text-sm text-muted-foreground pb-1">{title}</p>}
         {description && (
-          <ul className="ml-4 list-outside list-disc flex flex-col gap-1 text-xs sm:text-sm">
+          <ul className="ml-4 list-outside list-disc flex flex-col gap-1">
             {description.map((desc, i) => (
-              <li key={i} className="prose pr-8 text-sm dark:prose-invert">
+              <li key={i} className="prose pr-8 text-xs dark:prose-invert">
                 {desc}
               </li>
             ))}

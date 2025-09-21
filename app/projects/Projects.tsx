@@ -52,7 +52,7 @@ export default function ProjectsPage() {
   return (
     <article className="flex flex-col items-center justify-start px-6 min-h-[75dvh]">
       <div className="max-w-custom flex flex-col gap-6 w-full">
-        <h1 className="text-inherit text-xl font-extrabold">My projects</h1>
+        <h1 className="text-inherit text-xl font-extrabold">Projects</h1>
 
         {/* Tag Toggle Filter */}
         <div className="flex flex-wrap gap-2">

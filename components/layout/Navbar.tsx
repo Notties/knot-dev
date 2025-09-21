@@ -19,7 +19,6 @@ export default function Navbar() {
             >
               <Link href={"/blog"}>blog</Link>
               <Link href={"/projects"}>projects</Link>
-              <Link href={"/"}>contact</Link>
               <ThemeToggle />
             </div>
           </nav>

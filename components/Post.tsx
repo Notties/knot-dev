@@ -14,7 +14,7 @@ export default function Posts({ posts }: Props) {
       <ul className="flex flex-col gap-3">
         {posts.map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`}>
-            <Card className="rounded-lg shadow-none">
+            <Card className="rounded-lg shadow-none hover:bg-gray-50 dark:hover:bg-gray-dark transition-all duration-300">
               <div className="flex flex-row justify-between p-4 xs:p-[1.2rem] items-center gap-5">
                 <div className="w-full">
                   <span

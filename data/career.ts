@@ -2,23 +2,22 @@ export const careers = [
   {
     name: "SunmiTH Company Limited",
     href: "https://sunmith.com",
-    title: "Full Stack Developer",
-    logo: "/images/career/sunmith.png",
+    title: "Software Developer",
+    logo: "",
     start: "2024",
     end: "Current",
     description: [
-      "Developed internal web systems (HR, CMS, CRM)",
-      "Developed E-commerce platforms and built Mobile Apps for Warehouse Management",
-      "Developed a bilingual (Thai–English) corporate website with SEO optimization",
-      "Managed deployment & hosting using Cloudflare, AWS (S3, Amplify, EC2) with Nginx and PM2",
       "Acted as a technical mentor for interns, providing guidance on development and project management",
+      "Managed deployment & hosting using Cloudflare, AWS (S3, Amplify, EC2) with Nginx and PM2",
+      "Developed E-commerce platforms and Company websites with SEO optimization",
+      "Developed internal web systems (HR, CRM)",
     ],
   },
   {
     name: "Gram Software Solution",
     href: "https://gramsoftware.com",
     title: "Software Developer",
-    logo: "/images/career/gram.png",
+    logo: "",
     start: "2023",
     end: "2024",
     description: [
@@ -32,7 +31,7 @@ export const careers = [
     name: "Metro Systems Corporation Public Company Limited",
     href: "https://www.metrosystems.co.th",
     title: "Application Developer",
-    logo: "/images/career/metro.png",
+    logo: "",
     start: "2023",
     end: "2023",
     description: [

@@ -38,8 +38,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </span>
     ),
     table: (props) => (
-      <div className="rounded-lg border border-gray-300 dark:border-gray-600 overflow-hidden">
-        <table className="w-full border-collapse !py-0 !my-0" {...props} />
+      <div className="rounded-lg border border-gray-300 dark:border-gray-600 overflow-x-auto">
+        <table className="w-full border-collapse !py-0 !my-0 min-w-[567px]" {...props} />
       </div>
     ),
     thead: (props) => (
