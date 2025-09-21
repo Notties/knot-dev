@@ -10,6 +10,7 @@ export type PostMetadata = {
     published: boolean;
     description: string;
     image: string;
+    tags: string[];
   };
 };
 

@@ -23,7 +23,7 @@ export default function TextFlip({ defaultText, hoverText }: Props) {
       >
         <div className="h-2 w-2 bg-green-500 rounded-full"></div>
         <Link
-          href={"/"}
+          href={"mailto:akthakorn@gmail.com"}
           className="relative h-5 overflow-hidden text-sm text-gray w-[7.7rem]
           flex justify-start"
         >

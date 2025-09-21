@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { ViewTransitions } from "next-view-transitions";
 import Providers from "./providers";
+import "prismjs/themes/prism-tomorrow.css";
 
 const noto_Sans_Thai = Noto_Sans_Thai({
   subsets: ["latin", "thai"],

@@ -22,13 +22,14 @@ export default function Projects() {
           />
         </div>
 
-        <div className="w-full grid grid-cols-2 gap-3">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3">
           {projects
             .map((item) => (
               <Link
                 href={"/projects"}
                 key={item.title}
                 className="flex flex-col gap-2 w-full border p-4 rounded-xl  
+                bg-white dark:bg-gray-dark/30
               hover:bg-gray-200/10 transition-all duration-300"
               >
                 {/* Image */}

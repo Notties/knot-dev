@@ -1,4 +1,6 @@
 import LinkWithIcon from "@/components/LinkWithIcon";
+import { Badge } from "@/components/ui/badge";
+import { PostMetadata } from "@/lib/posts";
 import { formatDate } from "@/lib/utils";
 import { ArrowLeftIcon } from "lucide-react";
 import Image from "next/image";
@@ -46,10 +48,12 @@ async function getPost({ slug }: { slug: string }) {
 
     const { metadata } = await import(`@/content/blogs/${slug}.mdx`);
 
-    return {
+    const result: PostMetadata = {
       slug,
       metadata,
     };
+
+    return result;
   } catch (error) {
     console.error("Error fetching post:", error);
     throw new Error(`Unable to fetch the post for slug: ${slug}`);
@@ -109,6 +113,18 @@ export default async function Page({
         <main className="prose dark:prose-invert prose-sm xs:prose-base">
           <MDXContent />
         </main>
+
+        {/* Tags */}
+        {post.metadata.tags && (
+          <div className="flex flex-wrap justify-start items-center gap-2 py-[2rem]">
+            <span className="text-sm text-muted-foreground">Tags</span>
+            {post.metadata.tags.map((tag) => (
+              <Badge variant={"secondary"} key={tag} className="text-xs shadow-none cursor-pointer font-normal">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        )}
       </div>
     </article>
   );

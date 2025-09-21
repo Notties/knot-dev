@@ -7,7 +7,7 @@ export default function Timeline({
   return (
     <div>
       <div className="p-0">
-        <ul className="ml-10 border-l border-dashed">
+        <ul className="ml-8 sm:ml-10 border-l border-dashed">
           {experience.map((exp, id) => (
             <TimelineItem key={id} experience={exp} />
           ))}

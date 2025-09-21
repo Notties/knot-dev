@@ -196,3 +196,21 @@
     
   }
 }
+
+@layer components {
+  .custom-code-block pre {
+    white-space: pre !important;
+    tab-size: 2 !important;
+    -moz-tab-size: 2 !important;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Inconsolata, "Roboto Mono", monospace !important;
+  }
+  
+  .custom-code-block code {
+    white-space: pre !important;
+    tab-size: 2 !important;
+    -moz-tab-size: 2 !important;
+    display: block !important;
+    font-family: inherit !important;
+  }
+
+}

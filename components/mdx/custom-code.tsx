@@ -1,9 +1,17 @@
 "use client";
 
+import { useRef, useState } from "react";
+import clsx from "clsx";
 import { Check, Clipboard } from "lucide-react";
-import React, { useRef, useState } from "react";
 
-const CustomCode = (props: any) => {
+export default function CustomCode({
+  children,
+  className,
+}: Readonly<{
+  children: React.ReactNode;
+  className?: string;
+}>) {
+  const language = className?.replace("language-", "") || "text";
   const [copied, setCopied] = useState(false);
   const codeRef = useRef<HTMLPreElement>(null);
 
@@ -18,36 +26,33 @@ const CustomCode = (props: any) => {
   };
 
   return (
-    <div >
-      <div className="relative rounded-md border h-fit text-white">
-        <div className="flex absolute right-2 top-[5px] justify-between items-center">
-          <button
-            type="button"
-            className="text-gray-300 bg-transparent border rounded-md backdrop-blur-md p-2 
+    <div className="relative group custom-code-block">
+      <div className="flex absolute right-2 top-[-2.1rem] justify-between items-center cursor-pointer">
+        <button
+          type="button"
+          className="text-gray-300 bg-transparent border border-gray-600 rounded-md backdrop-blur-md p-1 
+            cursor-pointer
             hover:text-input dark:hover:text-inherit"
-            onClick={handleCopy}
-          >
-            {copied ? (
-              <Check className="text-green-500 w-5 h-5" />
-            ) : (
-              <Clipboard className="w-5 h-5" />
-            )}
-          </button>
-        </div>
-        {/* Styled pre block for code snippets */}
-        <pre
-          ref={codeRef}
-          className={`${
-            props.className || ""
-          } border-none h-full p-4  overflow-auto
-          m-0 bg-slate-50/50 dark:bg-inherit not-prose text-sm`}
+          onClick={handleCopy}
         >
-          {/* Render the code without applying inline code styles */}
-          <code className="whitespace-pre text-black dark:text-inherit">{props.children}</code>
-        </pre>
+          {copied ? (
+            <Check className="text-green-500 size-4" />
+          ) : (
+            <Clipboard className="size-4 text-gray-300" />
+          )}
+        </button>
       </div>
+
+      <pre
+        ref={codeRef}
+        className={clsx(
+          "rounded-lg p-4 overflow-x-auto text-sm leading-relaxed",
+          "bg-gray-900 text-gray-100 ",
+          `language-${language}`
+        )}
+      >
+        <code className="whitespace-pre-wrap ">{children}</code>
+      </pre>
     </div>
   );
-};
-
-export default CustomCode;
+}

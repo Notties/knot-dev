@@ -32,7 +32,7 @@ export default function Page() {
               key={cat}
               variant={selectedCategory === cat ? "default" : "outline"}
               onClick={() => setSelectedCategory(cat)}
-              className="text-sm px-3 py-1 rounded-full"
+              className="text-sm px-3 py-1 rounded-full shadow-none cursor-pointer"
             >
               {cat}
             </Button>
@@ -40,11 +40,12 @@ export default function Page() {
         </div>
 
         {/* Project Grid */}
-        <div className="w-full grid grid-cols-2 gap-3">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-3">
           {filteredProjects.map((item) => (
             <div
               key={item.title}
               className="flex flex-col gap-2 w-full border p-4 rounded-xl  
+              bg-white dark:bg-gray-dark/30
               transition-all duration-300 shadow-sm"
             >
               {/* Image */}
@@ -74,7 +75,7 @@ export default function Page() {
                 ))}
               </div>
 
-              <div className="flex flex-row justify-start items-center gap-2 w-full">
+              <div className="flex flex-col sm:flex-row justify-start items-center sm:gap-2 w-full">
                 {/* Source code Button */}
                 <Link
                   href={item.linkGithub}

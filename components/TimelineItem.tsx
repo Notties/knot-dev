@@ -10,13 +10,13 @@ export default function TimelineItem({ experience }: { experience: Career }) {
     experience;
 
   return (
-    <li className="relative ml-10 py-4">
+    <li className="relative ml-7 sm:ml-10 py-4">
       <Link
         href={href}
         target="_blank"
-        className="absolute -left-16 top-4 flex items-center justify-center rounded-full bg-white"
+        className="absolute -left-[3rem] sm:-left-16 top-4 flex items-center justify-center rounded-full bg-white"
       >
-        <Avatar className="size-12 border">
+        <Avatar className="size-10 sm:size-12 border">
           <Image
             src={logo}
             alt={name}
@@ -27,7 +27,7 @@ export default function TimelineItem({ experience }: { experience: Career }) {
           <AvatarFallback>{name[0]}</AvatarFallback>
         </Avatar>
       </Link>
-      <div className="flex flex-1 flex-col justify-start gap-1">
+      <div className="flex flex-1 flex-col justify-start gap-1 pl-1">
         {start && (
           <time className="text-xs text-muted-foreground">
             <span>{start}</span>
@@ -36,7 +36,7 @@ export default function TimelineItem({ experience }: { experience: Career }) {
           </time>
         )}
         <h2 className="font-semibold leading-none">{name}</h2>
-        {title && <p className="text-sm text-muted-foreground">{title}</p>}
+        {title && <p className="text-sm text-muted-foreground pb-1">{title}</p>}
         {description && (
           <ul className="ml-4 list-outside list-disc flex flex-col gap-1 text-xs sm:text-sm">
             {description.map((desc, i) => (
