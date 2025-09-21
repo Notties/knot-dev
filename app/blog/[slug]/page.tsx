@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       locale: "th_TH",
       siteName: "Knot",
-      title: "Blog",
+      title: post.metadata.title,
       description: post.metadata.description,
       images: [
         {
