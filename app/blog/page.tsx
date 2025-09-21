@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: "https://knot-dev.tech/og-image.png",
           alt: "Software developer in Thailand specializing in creating web applications, mobile applications",
           secureUrl: "https://knot-dev.tech/og-image.png",
-          width: 800,
+          width: 1200,
           height: 630,
         },
       ],

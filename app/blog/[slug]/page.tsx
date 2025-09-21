@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: `https://knot-dev.tech/${post.metadata.image}`,
           alt: post.metadata.title,
           secureUrl: `https://knot-dev.tech/${post.metadata.image}`,
-          width: 800,
+          width: 1200,
           height: 630,
         },
       ],
