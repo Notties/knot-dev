@@ -16,8 +16,8 @@ export default function MapComponent({ mapKey }: MapComponentProps) {
 
   const mapStyle =
     resolvedTheme === "dark"
-      ? "https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json"
-      : "https://tiles.stadiamaps.com/styles/alidade_smooth.json";
+      ? "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
+      : "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
 
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -37,7 +37,7 @@ export default function MapComponent({ mapKey }: MapComponentProps) {
           zoom: 13,
           essential: true,
         });
-
+        
         const geojson = {
           type: "FeatureCollection",
           features: [
