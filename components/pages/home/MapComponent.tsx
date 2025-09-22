@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
-import "maplibre-gl/dist/maplibre-gl.css";
+import "./maplibre-gl.css";
 import { useTheme } from "next-themes";
 
 interface MapComponentProps {
