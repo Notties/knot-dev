@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useTheme } from "next-themes";
-import maplibregl from 'maplibre-gl';
+import maplibregl from "maplibre-gl";
 
 interface MapComponentProps {
   mapKey: string;
@@ -16,8 +16,8 @@ export default function MapComponent({ mapKey }: MapComponentProps) {
 
   const mapStyle =
     resolvedTheme === "dark"
-      ? "/map/alidade_smooth_dark.json"
-      : "/map/alidade_smooth.json";
+      ? "https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json"
+      : "https://tiles.stadiamaps.com/styles/alidade_smooth.json";
 
   useEffect(() => {
     if (!mapContainer.current) return;
