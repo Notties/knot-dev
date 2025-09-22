@@ -1,11 +1,23 @@
 "use client";
 
+import dynamic from "next/dynamic";
+
 import { useState, useEffect } from "react";
-import MapComponent from "@/components/pages/home/MapComponent";
 import Image from "next/image";
 import Card from "@/components/Cards";
 import { skills } from "@/data/skills";
 import TextFlip from "@/components/motion/TextFlip";
+
+const MapComponent = dynamic(
+  () =>
+    import("@/components/pages/home/MapComponent").then((mod) => mod.default),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-52 rounded-t-[0.7rem] border-x border-t" />
+    ),
+  }
+);
 
 export default function Hero() {
   const [time, setTime] = useState("");

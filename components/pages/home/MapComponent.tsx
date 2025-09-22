@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import maplibregl from "maplibre-gl";
-import "./maplibre-gl.css";
+import "maplibre-gl/dist/maplibre-gl.css";
 import { useTheme } from "next-themes";
+import maplibregl from 'maplibre-gl';
 
 interface MapComponentProps {
   mapKey: string;
@@ -14,7 +14,10 @@ export default function MapComponent({ mapKey }: MapComponentProps) {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<maplibregl.Map | null>(null);
 
-  const mapStyle = resolvedTheme === "dark" ? "/map/alidade_smooth_dark.json" : "/map/alidade_smooth.json";
+  const mapStyle =
+    resolvedTheme === "dark"
+      ? "/map/alidade_smooth_dark.json"
+      : "/map/alidade_smooth.json";
 
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -95,7 +98,6 @@ export default function MapComponent({ mapKey }: MapComponentProps) {
     }
 
     map.current.setStyle(mapStyle);
-
   }, [mapKey, mapStyle, resolvedTheme]);
 
   return (
