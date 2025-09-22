@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Badge } from "./ui/badge";
-import Icon from "./Icon";
 import { Career } from "@/types/career.type";
+import { Badge } from "@/components/ui/badge";
+import Icon from "@/components/Icon";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function TimelineItem({ experience }: { experience: Career }) {
   const { name, href, title, logo, start, end, description, links } =

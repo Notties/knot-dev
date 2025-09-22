@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Input } from "./ui/input";
 import Image from "next/image";
 import catNone from "@/public/images/cat/none.png";
 import catLeft from "@/public/images/cat/left.png";
 import catRight from "@/public/images/cat/right.png";
-import Badge from "./Badge";
+import { Input } from "@/components/ui/input";
+import Badge from "@/components/Badge";
 
 export default function BongoCatTyping() {
   const [show, setShow] = useState(false);

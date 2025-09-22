@@ -1,9 +1,9 @@
-import Experience from "@/components/sections/Experience.section";
-import Posts from "@/components/sections/Post.section";
-import Projects from "@/components/sections/Projects.section";
-import Header from "@/components/sections/Hero.section";
-import UserInterface from "@/components/sections/Ui.section";
-import { Particle } from "@/components/layout/Particle";
+import Experience from "@/components/pages/home/Experience.section";
+import Posts from "@/components/pages/home/Post.section";
+import Projects from "@/components/pages/home/Projects.section";
+import Header from "@/components/pages/home/Hero.section";
+import UserInterface from "@/components/pages/home/Ui.section";
+import { Particle } from "@/components/pages/home/Particle";
 
 export default function Home() {
   return (

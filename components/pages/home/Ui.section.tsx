@@ -1,5 +1,5 @@
-import BongoCatTyping from "@/components/BongoCatTyping";
-import Compare from "@/components/Compare";
+import BongoCatTyping from "@/components/pages/home/BongoCatTyping";
+import Compare from "@/components/pages/home/Compare";
 import Badge from "@/components/Badge";
 
 export default function UserInterface() {

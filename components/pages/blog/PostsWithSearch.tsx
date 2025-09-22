@@ -2,10 +2,10 @@
 
 import { Delete } from "lucide-react";
 import { useState } from "react";
-import Posts from "./Post";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
 import { PostMetadata } from "@/lib/posts";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import Posts from "./Post";
 
 interface Props {
   posts: PostMetadata[];

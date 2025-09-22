@@ -1,6 +1,16 @@
 import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
-import mdxConfig from "./mdx.config";
+
+const options = {
+  theme: "one-dark-pro",
+};
+
+const mdxConfig = {
+  options: {
+    remarkPlugins: [require.resolve("remark-gfm")],
+    rehypePlugins: [[require.resolve("rehype-pretty-code"), options]],
+  },
+};
 
 const withMDX = createMDX(mdxConfig);
 

@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "Software developer in Thailand specializing in creating web applications, mobile applications",
     alternates: {
-      canonical: `https://knot-dev.tech/projects`,
+      canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/projects`,
     },
     openGraph: {
       type: "website",
@@ -26,9 +26,9 @@ export async function generateMetadata(): Promise<Metadata> {
         "Software developer in Thailand specializing in creating web applications, mobile applications",
       images: [
         {
-          url: "https://knot-dev.tech/og-image.png",
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/og-image.png`,
           alt: "Software developer in Thailand specializing in creating web applications, mobile applications",
-          secureUrl: "https://knot-dev.tech/og-image.png",
+          secureUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/og-image.png`,
           width: 1200,
           height: 630,
         },

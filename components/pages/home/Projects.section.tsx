@@ -1,7 +1,7 @@
 "use client";
 
 import Badge from "@/components/Badge";
-import LinkWithIcon from "../LinkWithIcon";
+import LinkWithIcon from "../../LinkWithIcon";
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import { projects } from "@/data/project";

@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "next-view-transitions";
-import ThemeToggle from "@/components/ThemeToggle";
+import ThemeToggle from "@/components/layout/ThemeToggle";
 
 export default function Navbar() {
   return (

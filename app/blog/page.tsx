@@ -1,4 +1,4 @@
-import PostsWithSearch from "@/components/PostsWithSearch";
+import PostsWithSearch from "@/components/pages/blog/PostsWithSearch";
 import { getAllPosts } from "@/lib/posts";
 import { Metadata } from "next/types";
 
@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "Software developer in Thailand specializing in creating web applications, mobile applications",
     alternates: {
-      canonical: `https://knot-dev.tech/blog`,
+      canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/blog`,
     },
     openGraph: {
       type: "article",
@@ -19,9 +19,9 @@ export async function generateMetadata(): Promise<Metadata> {
         "Software developer in Thailand specializing in creating web applications, mobile applications",
       images: [
         {
-          url: "https://knot-dev.tech/og-image.png",
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/og-image.png`,
           alt: "Software developer in Thailand specializing in creating web applications, mobile applications",
-          secureUrl: "https://knot-dev.tech/og-image.png",
+          secureUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/og-image.png`,
           width: 1200,
           height: 630,
         },

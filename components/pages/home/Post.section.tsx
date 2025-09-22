@@ -1,7 +1,7 @@
 import LinkWithIcon from "@/components/LinkWithIcon";
 import { getAllPosts } from "@/lib/posts";
 import { ArrowRightIcon } from "lucide-react";
-import Posts from "@/components/Post";
+import Posts from "@/components/pages/blog/Post";
 import Badge from "@/components/Badge";
 
 export default async function Post() {

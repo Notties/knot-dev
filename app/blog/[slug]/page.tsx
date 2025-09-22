@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.metadata.title,
     description: post.metadata.description,
     alternates: {
-      canonical: `https://knot-dev.tech/blog/${post.slug}`,
+      canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/blog/${post.slug}`,
     },
     openGraph: {
       type: "article",
@@ -28,9 +28,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.metadata.description,
       images: [
         {
-          url: `https://knot-dev.tech/${post.metadata.image}`,
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/${post.metadata.image}`,
           alt: post.metadata.title,
-          secureUrl: `https://knot-dev.tech/${post.metadata.image}`,
+          secureUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/${post.metadata.image}`,
           width: 1200,
           height: 630,
         },

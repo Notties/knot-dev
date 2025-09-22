@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description:
     "Software developer in Thailand specializing in creating web applications, mobile applications",
   alternates: {
-    canonical: `https://knot-dev.tech`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}`,
   },
   openGraph: {
     type: "website",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
       "Software developer in Thailand specializing in creating web applications, mobile applications",
     images: [
       {
-        url: "https://knot-dev.tech/og-image.png",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/og-image.png`,
         alt: "Software developer in Thailand specializing in creating web applications, mobile applications",
-        secureUrl: "https://knot-dev.tech/og-image.png",
+        secureUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/og-image.png`,
         width: 1200,
         height: 630,
       },

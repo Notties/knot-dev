@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import MapComponent from "@/components/MapComponent";
+import MapComponent from "@/components/pages/home/MapComponent";
 import Image from "next/image";
 import Card from "@/components/Cards";
 import { skills } from "@/data/skills";
