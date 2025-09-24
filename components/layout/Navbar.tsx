@@ -2,7 +2,6 @@
 
 import { Link } from "next-view-transitions";
 import ThemeToggle from "@/components/layout/ThemeToggle";
-import { useTheme } from "next-themes";
 
 export default function Navbar() {
   return (

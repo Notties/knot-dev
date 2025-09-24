@@ -20,10 +20,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           </code>
         );
       }
-
+ 
       return (
         <span
-          className="bg-gray-200/70 dark:bg-gray-800 rounded-sm px-[5px] font-mono text-inherit text-sm"
+          className="bg-gray-200/70 dark:bg-gray-800 rounded-sm px-[5px] font-mono text-inherit text-xs sm:text-sm"
           {...props}
         >
           {children}

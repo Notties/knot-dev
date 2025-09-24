@@ -46,7 +46,7 @@ export default function CustomCode({
       <pre
         ref={codeRef}
         className={clsx(
-          "rounded-lg p-4 !m-0 !text-base sm:!text-lg  leading-relaxed",
+          "rounded-lg !m-0 !text-base sm:!text-lg  leading-relaxed",
           "!bg-gray-dark text-gray-100 ",
           `language-${language}`
         )}

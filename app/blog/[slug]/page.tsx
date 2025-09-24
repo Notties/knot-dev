@@ -1,6 +1,7 @@
 import LinkWithIcon from "@/components/LinkWithIcon";
+import Posts from "@/components/pages/blog/Post";
 import { Badge } from "@/components/ui/badge";
-import { PostMetadata } from "@/lib/posts";
+import { getAllPosts, PostMetadata } from "@/lib/posts";
 import { formatDate } from "@/lib/utils";
 import { ArrowLeftIcon, Shapes, Tags } from "lucide-react";
 import Image from "next/image";
@@ -62,6 +63,7 @@ async function getPost({ slug }: { slug: string }) {
 
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join("content", "blogs"));
+
   const params = files.map((filename) => ({
     slug: filename.replace(".mdx", ""),
   }));
@@ -74,8 +76,9 @@ export default async function Page({
 }: Readonly<{
   params: Promise<{ slug: string }>;
 }>) {
-  const slug = (await params).slug;
+  const { slug } = await params;
   const post = await getPost(await params);
+  const posts = await getAllPosts();
   const { default: MDXContent } = await import(`@/content/blogs/${slug}.mdx`);
 
   return (
@@ -142,6 +145,32 @@ export default async function Page({
             ))}
           </div>
         )}
+
+        {/* Divider border */}
+        <div className="border-b border-gray-200 dark:border-gray-700 border-dashed" />
+
+        {/* Related Blogs */}
+        <p className="text-inherit text-sm sm:text-base font-bold">
+          {post.metadata.category}
+        </p>
+        <Posts
+          posts={posts
+            .filter(
+              (v) =>
+                v.metadata.category === post.metadata.category &&
+                v.slug !== slug
+            )
+            .slice(0, 3)}
+        />
+
+        <div className="w-28">
+          <LinkWithIcon
+            href="/blog"
+            position="left"
+            icon={<ArrowLeftIcon className="size-4" />}
+            text="back to blog"
+          />
+        </div>
       </div>
     </article>
   );
