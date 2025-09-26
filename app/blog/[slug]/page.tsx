@@ -146,12 +146,21 @@ export default async function Page({
           </div>
         )}
 
+        <div className="w-28">
+          <LinkWithIcon
+            href="/blog"
+            position="left"
+            icon={<ArrowLeftIcon className="size-4" />}
+            text="back to blog"
+          />
+        </div>
+
         {/* Divider border */}
         <div className="border-b border-gray-200 dark:border-gray-700 border-dashed" />
 
         {/* Related Blogs */}
         <p className="text-inherit text-sm sm:text-base font-bold">
-          {post.metadata.category}
+          Related Blogs
         </p>
         <Posts
           posts={posts
@@ -162,15 +171,6 @@ export default async function Page({
             )
             .slice(0, 3)}
         />
-
-        <div className="w-28">
-          <LinkWithIcon
-            href="/blog"
-            position="left"
-            icon={<ArrowLeftIcon className="size-4" />}
-            text="back to blog"
-          />
-        </div>
       </div>
     </article>
   );
