@@ -5,7 +5,7 @@ const options = {
   theme: "one-dark-pro",
 };
 
-const mdxConfig = {
+const mdxConfig: any = {
   options: {
     remarkPlugins: [require.resolve("remark-gfm")],
     rehypePlugins: [[require.resolve("rehype-pretty-code"), options]],

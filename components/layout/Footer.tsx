@@ -20,7 +20,7 @@ export default function Footer() {
               <span className="absolute inline-flex h-full w-full animate-ping duration-[2000ms] rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex size-2 rounded-full bg-green-500"></span>
             </span>
-            <p>September 28, 2025</p>
+            <p>November 9, 2025</p>
           </span>
         </div>
         <div

@@ -1,6 +1,6 @@
 "use client";
 
-import { Delete, ChevronDown, ChevronUp } from "lucide-react";
+import { Delete, ChevronDown, ChevronUp, Tags } from "lucide-react";
 import { useState } from "react";
 import { PostMetadata } from "@/lib/posts";
 import { Input } from "@/components/ui/input";
@@ -18,13 +18,6 @@ export default function PostsWithSearch({ posts }: Readonly<Props>) {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [showAllTags, setShowAllTags] = useState(false);
 
-  // Extract unique categories from posts, exclude empty
-  const categories = Array.from(
-    new Set(
-      posts.map((post) => post.metadata.category).filter((cat) => cat !== "")
-    )
-  );
-
   const tags = Array.from(
     new Set(posts.flatMap((post) => post.metadata.tags || []))
   ).toSorted((a, b) => a.localeCompare(b));
@@ -34,10 +27,6 @@ export default function PostsWithSearch({ posts }: Readonly<Props>) {
     setSelectedCategory(null);
     setSelectedTag(null);
     setShowAllTags(false);
-  };
-
-  const toggleCategory = (cat: string | null) => {
-    setSelectedCategory((prev) => (prev === cat ? null : cat));
   };
 
   const toggleTag = (tag: string | null) => {
@@ -86,30 +75,11 @@ export default function PostsWithSearch({ posts }: Readonly<Props>) {
         </Button>
       </div>
 
-      {/* Category */}
-      {/* <div className="flex flex-wrap gap-2 pb-2">
-        <Button
-          variant={selectedCategory === null ? "default" : "outline"}
-          onClick={() => toggleCategory(null)}
-          className="text-sm px-3 py-1 rounded-full shadow-none cursor-pointer"
-        >
-          All Categories
-        </Button>
-
-        {categories.map((cat) => (
-          <Button
-            key={cat}
-            variant={selectedCategory === cat ? "default" : "outline"}
-            onClick={() => toggleCategory(cat)}
-            className="text-sm px-3 py-1 rounded-full shadow-none cursor-pointer"
-          >
-            {cat}
-          </Button>
-        ))}
-      </div> */}
-
       {/* Tags */}
-      <h2 className="text-sm font-bold">Tags</h2>
+      <div className="flex gap-2">
+        <Tags className="size-5" />
+        <h2 className="text-sm font-bold">Tags</h2>
+      </div>
       <div className="flex flex-wrap gap-2 pb-2">
         {(showAllTags ? tags : tags.slice(0, 8)).map((tag) => (
           <Badge
