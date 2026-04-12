@@ -20,10 +20,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           </code>
         );
       }
- 
+
       return (
         <span
-          className="bg-gray-200/70 dark:bg-gray-800 rounded-sm px-[5px] font-mono text-inherit text-xs sm:text-sm"
+          className="bg-muted rounded-sm px-[5px] font-mono text-inherit text-xs sm:text-sm"
           {...props}
         >
           {children}
@@ -32,38 +32,38 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     },
     pre: (props) => <CustomCode {...props} />,
     a: (props) => (
-      <span className="inline-flex items-center gap-1 text-blue-500 hover:text-blue-700 transition-colors">
+      <span className="inline-flex items-center gap-1 text-blue-500 hover:text-blue-400 transition-colors">
         <Link target="__blank" className="underline" {...props} />
         <ExternalLink size={12} />
       </span>
     ),
     table: (props) => (
-      <div className="rounded-lg border border-gray-300 dark:border-gray-600 overflow-x-auto">
+      <div className="rounded-lg border border-border overflow-x-auto">
         <table className="w-full border-collapse !py-0 !my-0 min-w-[567px]" {...props} />
       </div>
     ),
     thead: (props) => (
       <thead
-        className="bg-gray-50 dark:bg-gray-800 w-full text-start"
+        className="bg-muted w-full text-start"
         {...props}
       />
     ),
     tbody: (props) => <tbody {...props} />,
     tr: (props) => (
       <tr
-        className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 last:border-b-0"
+        className="border-b border-border hover:bg-accent/50 last:border-b-0"
         {...props}
       />
     ),
     th: (props) => (
       <th
-        className="border-r border-gray-300 dark:border-gray-600 last:border-r-0 !px-4 py-2 text-left font-semibold bg-gray-100 dark:bg-gray-700 align-middle"
+        className="border-r border-border last:border-r-0 !px-4 py-2 text-left font-semibold bg-muted align-middle"
         {...props}
       />
     ),
     td: (props) => (
       <td
-        className="border-r border-gray-300 dark:border-gray-600 last:border-r-0 !px-4 py-2 align-top"
+        className="border-r border-border last:border-r-0 !px-4 py-2 align-top"
         {...props}
       />
     ),

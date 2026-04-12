@@ -1,32 +1,85 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Link } from "next-view-transitions";
 import ThemeToggle from "@/components/layout/ThemeToggle";
+import TypingLogo from "@/components/motion/TypingLogo";
 
 export default function Navbar() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down
+        setIsVisible(false);
+      } else {
+        // Scrolling up
+        setIsVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", controlNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY]);
+
   return (
-    <section className="relative">
-      <div className="px-6 w-full flex justify-center items-center h-24 mb-4">
+    <header
+      className={`max-w-custom mx-auto sticky top-0 z-50 w-full transition-all duration-500 ease-in-out ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      {/* Seamless Fading Blur Effect */}
+      <div
+        className="absolute inset-0 pointer-events-none h-24"
+        style={{
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          maskImage:
+            "linear-gradient(to bottom, black 0%, black 20%, rgba(0, 0, 0, 0.9) 40%, rgba(0, 0, 0, 0.5) 70%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, black 0%, black 20%, rgba(0, 0, 0, 0.9) 40%, rgba(0, 0, 0, 0.5) 70%, transparent 100%)",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-transparent" />
+      </div>
+
+      <div className="relative w-full flex justify-center items-center h-20">
         <nav className="flex h-full w-full items-center justify-between max-w-custom ">
           <div className="w-full h-full flex flex-row gap-3 justify-start items-center ">
             <Link href={"/"}>
-              <p className="text-2xl text-inherit font-bold">Knot</p>
+              <TypingLogo />
             </Link>
-            <Link href="https://webring.wonderful.software#knot-dev.me" target="_blank">
-              <WebringIcon className="size-6 text-black dark:text-white" />
+            <Link
+              href="https://webring.wonderful.software#knot-dev.me"
+              target="_blank"
+              className="hover:rotate-20 transition-transform duration-300 ease-in-out"
+            >
+              <WebringIcon className="size-6 text-black dark:text-foreground" />
             </Link>
           </div>
           <div
             className="text-gray text-base font-medium w-full h-full 
         items-center flex justify-end gap-3 sm:gap-5"
           >
-            <Link href={"/blog"}>blog</Link>
-            <Link href={"/projects"}>projects</Link>
+            <Link href={"/blog"}>
+              <p className="hover:">blog</p>
+            </Link>
+            <Link href={"/projects"}>
+              <p className="hover:">projects</p>
+            </Link>
             <ThemeToggle />
           </div>
         </nav>
       </div>
-    </section>
+    </header>
   );
 }
 

@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="w-full h-10 flex flex-col justify-start items-start ">
           <Link href={"/"}>
             <span className="text-xs flex gap-1 text-gray">
-              <p className=" transition-all duration-300 hover:text-black">
+              <p className=" transition-all duration-300 hover:text-foreground">
                 knot-dev.tech
               </p>
             </span>
@@ -30,21 +30,21 @@ export default function Footer() {
           <Link
             href={"https://github.com/notties"}
             target="_blank"
-            className="hover:text-black transition-all duration-300"
+            className="hover:text-foreground transition-all duration-300"
           >
             <Github name="github" className="h-[17px] w-[17px]" />
           </Link>
           <Link
             href={"https://www.linkedin.com/in/akthakorn/"}
             target="_blank"
-            className="hover:text-black transition-all duration-300"
+            className="hover:text-foreground transition-all duration-300"
           >
             <Linkedin name="linkedin" className="h-[17px] w-[17px]" />
           </Link>
           <Link
             href={"mailto:akthakorn@gmail.com"}
             target="_blank"
-            className="hover:text-black transition-all duration-300"
+            className="hover:text-foreground transition-all duration-300"
           >
             <Mail name="mail" className="h-[17px] w-[17px]" />
           </Link>

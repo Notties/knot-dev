@@ -13,7 +13,7 @@ const Card: React.FC<CardProps> = ({ title, imgSrc }) => {
       className="border w-full flex flex-col cursor-pointer
     justify-center items-center rounded-lg hover:shadow-xs transition-all duration-300
     gap-2 grayscale hover:grayscale-0
-    h-16 xs:h-18 group bg-white dark:bg-black-full
+    h-16 xs:h-18 group bg-card dark:bg-card
     "
     >
       <Image

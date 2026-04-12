@@ -17,6 +17,41 @@ export default function BongoCatTyping() {
   const [catImage, setCatImage] = useState(catNone);
   const [isPasted, setIsPasted] = useState(false);
 
+  // Placeholder typing animation states
+  const [placeholder, setPlaceholder] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeletingPlaceholder, setIsDeletingPlaceholder] = useState(false);
+
+  const placeholderMessages = [
+    "Start typing here...",
+    "Life is a journey, enjoy the ride.",
+    "Try to beat the clock!",
+    "Bongo cat is watching...",
+    "Give it your best shot!",
+  ];
+
+  useEffect(() => {
+    const currentWord = placeholderMessages[wordIndex];
+    const typingSpeed = isDeletingPlaceholder ? 50 : 100;
+
+    const timeout = setTimeout(() => {
+      if (!isDeletingPlaceholder) {
+        setPlaceholder(currentWord.substring(0, placeholder.length + 1));
+        if (placeholder === currentWord) {
+          setTimeout(() => setIsDeletingPlaceholder(true), 2000);
+        }
+      } else {
+        setPlaceholder(currentWord.substring(0, placeholder.length - 1));
+        if (placeholder === "") {
+          setIsDeletingPlaceholder(false);
+          setWordIndex((prev) => (prev + 1) % placeholderMessages.length);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [placeholder, isDeletingPlaceholder, wordIndex]);
+
   const inputRef = useRef<HTMLInputElement>(null);
 
   const targetText = "Life is a journey, enjoy the ride.";
@@ -160,7 +195,7 @@ export default function BongoCatTyping() {
                     className={`transition-all duration-300 ${
                       isTyped
                         ? isCorrect
-                          ? "text-black dark:text-white"
+                          ? "text-foreground dark:text-foreground"
                           : "text-red-500"
                         : "text-foreground/25 dark:text-foreground/40"
                     }`}
@@ -184,7 +219,7 @@ export default function BongoCatTyping() {
             disabled={isComplete}
             className="text-[13px]! h-[3.7rem] shadow-none border-[3px] border-black
               focus-visible:ring-0 disabled:opacity-100 disabled:text-gray"
-            placeholder="Start typing here..."
+            placeholder={placeholder}
           />
         </div>
         <div

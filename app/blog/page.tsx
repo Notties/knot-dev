@@ -3,10 +3,11 @@ import { getAllPosts } from "@/lib/posts";
 import { Metadata } from "next/types";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const description =
+    "Blog posts about software development, web development, mobile development, and other related topics by a software developer in Thailand.";
   return {
     title: "Blog",
-    description:
-      "Software developer in Thailand specializing in creating web applications, mobile applications",
+    description: description,
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/blog`,
     },
@@ -15,12 +16,11 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: "th_TH",
       siteName: "Knot",
       title: "Blog",
-      description:
-        "Software developer in Thailand specializing in creating web applications, mobile applications",
+      description: description,
       images: [
         {
           url: `${process.env.NEXT_PUBLIC_BASE_URL}/og-image.png`,
-          alt: "Software developer in Thailand specializing in creating web applications, mobile applications",
+          alt: description,
           secureUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/og-image.png`,
           width: 1200,
           height: 630,

@@ -45,9 +45,8 @@ export default function ProjectsPage() {
             <div
               key={item.title}
               className="flex flex-col gap-2 w-full border p-4 rounded-xl  
-              bg-white dark:bg-gray-dark/30
-              transition-all duration-300 shadow-sm"
-            >
+              bg-card
+              transition-all duration-300 shadow-sm"            >
               {/* Image */}
               <Image
                 src={item.image}

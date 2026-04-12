@@ -88,7 +88,7 @@ export default function PostsWithSearch({ posts }: Readonly<Props>) {
             onClick={() => toggleTag(tag)}
             className={`text-xs px-2 py-1 cursor-pointer transition-colors 
               hover:bg-foreground/10 ${
-                selectedTag === tag ? "text-white hover:bg-foreground" : ""
+                selectedTag === tag ? "text-primary-foreground hover:bg-primary/80" : ""
               }`}
           >
             {tag}

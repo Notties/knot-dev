@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useTheme } from "next-themes";
 import maplibregl from "maplibre-gl";
+import { Map } from "lucide-react";
 
 interface MapComponentProps {
   mapKey: string;
@@ -13,6 +14,7 @@ export default function MapComponent({ mapKey }: MapComponentProps) {
   const { resolvedTheme } = useTheme();
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<maplibregl.Map | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const mapStyle =
     resolvedTheme === "dark"
@@ -32,6 +34,7 @@ export default function MapComponent({ mapKey }: MapComponentProps) {
       });
 
       map.current.on("load", () => {
+        setIsLoading(false);
         map.current?.flyTo({
           center: [100.5018, 13.7563],
           zoom: 13,
@@ -95,15 +98,30 @@ export default function MapComponent({ mapKey }: MapComponentProps) {
             .addTo(map.current!);
         });
       });
+    } else {
+       map.current.setStyle(mapStyle);
+       map.current.once("styledata", () => {
+         setIsLoading(false);
+       });
     }
-
-    map.current.setStyle(mapStyle);
   }, [mapKey, mapStyle, resolvedTheme]);
 
   return (
-    <div
-      ref={mapContainer}
-      className="w-full h-52 rounded-t-[0.7rem] border-x border-t"
-    />
+    <div className="relative w-full h-52 rounded-t-[0.7rem] border-x border-t overflow-hidden bg-card">
+      {/* Skeleton Loading State */}
+      {isLoading && (
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-muted/30 animate-pulse">
+          <Map className="size-8 text-muted-foreground/30 mb-2" />
+        </div>
+      )}
+      
+      {/* Map Container */}
+      <div
+        ref={mapContainer}
+        className={`w-full h-full transition-opacity duration-700 ease-in-out ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+      />
+    </div>
   );
 }

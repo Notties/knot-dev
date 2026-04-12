@@ -14,7 +14,7 @@ export default function Badge({ text, className }: Props) {
         className
       )}
     >
-      <p className=" text-gray dark:text-white/60">{text}</p>
+      <p className=" text-gray dark:text-foreground/60">{text}</p>
     </div>
   );
 }

@@ -13,7 +13,7 @@ export default function TimelineItem({ experience }: { experience: Career }) {
       <Link
         href={href}
         target="_blank"
-        className="absolute -left-[3rem] sm:-left-16 top-4 flex items-center justify-center rounded-full bg-white"
+        className="absolute -left-[3rem] sm:-left-16 top-4 flex items-center justify-center rounded-full bg-background"
       >
         <Avatar className="size-10 sm:size-12 border">
           <AvatarImage

@@ -28,10 +28,9 @@ export default function Projects() {
               <Link
                 href={"/projects"}
                 key={item.title}
-                className="flex flex-col gap-2 w-full border p-4 rounded-xl  
-                bg-white dark:bg-gray-dark/30
-              hover:bg-gray-200/10 transition-all duration-300"
-              >
+                className="flex flex-col gap-2 w-full border p-4 rounded-xl
+                bg-card
+                hover:bg-accent transition-all duration-300"              >
                 {/* Image */}
                 <Image
                   src={item.image}
