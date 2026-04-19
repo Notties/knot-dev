@@ -1,7 +1,8 @@
 import LinkWithIcon from "@/components/LinkWithIcon";
 import Posts from "@/components/pages/blog/Post";
+import TableOfContents from "@/components/pages/blog/TableOfContents";
 import { Badge } from "@/components/ui/badge";
-import { getAllPosts, PostMetadata } from "@/lib/posts";
+import { getAllPosts, getHeadings, PostMetadata } from "@/lib/posts";
 import { formatDate } from "@/lib/utils";
 import { ArrowLeftIcon, Shapes, Tags } from "lucide-react";
 import Image from "next/image";
@@ -79,11 +80,12 @@ export default async function Page({
   const { slug } = await params;
   const post = await getPost(await params);
   const posts = await getAllPosts();
+  const headings = await getHeadings(slug);
   const { default: MDXContent } = await import(`@/content/blogs/${slug}.mdx`);
 
   return (
-    <article className="flex flex-col items-center justify-center px-6 ">
-      <div className="max-w-custom flex flex-col gap-4 w-full">
+    <article className="container flex flex-col items-center justify-center">
+      <div className="max-w-custom lg:max-w-5xl flex flex-col gap-4 w-full">
         <div className="w-28">
           <LinkWithIcon
             href="/blog"
@@ -125,9 +127,12 @@ export default async function Page({
           )}
         </header>
 
-        <main className="prose dark:prose-invert prose-sm xs:prose-base">
-          <MDXContent />
-        </main>
+        <div className="flex flex-col w-full">
+          <TableOfContents headings={headings} />
+          <main className="prose dark:prose-invert prose-sm xs:prose-base max-w-full min-w-0">
+            <MDXContent />
+          </main>
+        </div>
 
         {/* Tags */}
         {post.metadata.tags && (

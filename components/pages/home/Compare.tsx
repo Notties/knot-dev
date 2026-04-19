@@ -29,7 +29,7 @@ export default function Compare() {
   };
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full hover:cursor-pointer">
       <motion.div
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}

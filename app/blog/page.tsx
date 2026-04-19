@@ -35,7 +35,7 @@ export default async function page() {
   const publishedPosts = posts.filter((post) => post.metadata.published);
 
   return (
-    <article className="flex flex-col items-center justify-start px-6 min-h-[75dvh]">
+    <article className="container flex flex-col items-center justify-start min-h-[75dvh]">
       <div className="max-w-custom flex flex-col gap-4  w-full">
         <h1 className="text-inherit text-xl font-extrabold">Blog</h1>
         <PostsWithSearch posts={publishedPosts} />

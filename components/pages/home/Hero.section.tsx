@@ -153,7 +153,7 @@ export default function Hero() {
       motion-duration-[1s] motion-opacity-in-0 "
       >
         <p className="text-inherit text-[0.9rem]">
-          Full Stack Developer with 2 years of experience in Web and Mobile
+          Full Stack Developer with 3 years of experience in Web and Mobile
           application development. with a focus on building scalable and
           user-friendly solutions.
         </p>

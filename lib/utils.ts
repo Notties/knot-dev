@@ -12,3 +12,13 @@ export function formatDate(date: string) {
     year: "numeric",
   });
 }
+
+export function slugify(text: string) {
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-") // Replace spaces with -
+    .replace(/[^\u0E00-\u0E7F\w-]+/g, "") // Keep Thai characters (\u0E00-\u0E7F) and standard word chars
+    .replace(/--+/g, "-"); // Replace multiple - with single -
+}

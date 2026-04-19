@@ -21,7 +21,7 @@ export default function ProjectsPage() {
       : projects.filter((p) => p.category === selectedCategory);
 
   return (
-    <article className="flex flex-col items-center justify-start px-6 min-h-[75dvh]">
+    <article className="container flex flex-col items-center justify-start min-h-[75dvh]">
       <div className="max-w-custom flex flex-col gap-6 w-full">
         <h1 className="text-inherit text-xl font-extrabold">Projects</h1>
 
@@ -46,14 +46,15 @@ export default function ProjectsPage() {
               key={item.title}
               className="flex flex-col gap-2 w-full border p-4 rounded-xl  
               bg-card
-              transition-all duration-300 shadow-sm"            >
+              transition-all duration-300 shadow-xs"
+            >
               {/* Image */}
               <Image
                 src={item.image}
                 alt={item.title}
                 width={800}
                 height={600}
-                className="min-h-[9rem] max-h-[9rem] border rounded-lg object-contain"
+                className="min-h-[9rem] max-h-[9rem] rounded-lg object-contain"
               />
               <span className="flex flex-col gap-2 pt-1">
                 {/* Title */}

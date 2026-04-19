@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`max-w-custom mx-auto sticky top-0 z-50 w-full transition-all duration-500 ease-in-out ${
+      className={`container sticky top-0 z-50 w-full transition-all duration-500 ease-in-out ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -70,10 +70,10 @@ export default function Navbar() {
         items-center flex justify-end gap-3 sm:gap-5"
           >
             <Link href={"/blog"}>
-              <p className="hover:">blog</p>
+              <p className="hover:underline">blog</p>
             </Link>
             <Link href={"/projects"}>
-              <p className="hover:">projects</p>
+              <p className="hover:underline">projects</p>
             </Link>
             <ThemeToggle />
           </div>

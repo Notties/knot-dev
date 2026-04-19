@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { slugify } from "./utils";
 
 export type PostMetadata = {
   slug: string;
@@ -12,6 +13,12 @@ export type PostMetadata = {
     image: string;
     tags: string[];
   };
+};
+
+export type Heading = {
+  text: string;
+  level: number;
+  id: string;
 };
 
 // Helper function to get all posts
@@ -43,4 +50,25 @@ export async function getAllPosts(limit?: number): Promise<PostMetadata[]> {
 
   // Sort posts by publish date in descending order
   return sortPosts;
+}
+
+export async function getHeadings(slug: string): Promise<Heading[]> {
+  const mdxPath = path.join(process.cwd(), "content", "blogs", `${slug}.mdx`);
+  if (!fs.existsSync(mdxPath)) {
+    return [];
+  }
+
+  const content = fs.readFileSync(mdxPath, "utf8");
+  const headingLines = content.split("\n").filter((line) => line.startsWith("##"));
+
+  return headingLines.map((line) => {
+    const match = line.match(/^(#{2,3})\s+(.*)$/);
+    if (!match) return { text: "", level: 0, id: "" };
+
+    const level = match[1].length;
+    const text = match[2].trim();
+    const id = slugify(text);
+
+    return { text, level, id };
+  }).filter(h => h.text !== "");
 }

@@ -37,7 +37,7 @@ export default function Projects() {
                   alt={item.title}
                   width={800}
                   height={600}
-                  className="min-h-[7.5rem] border rounded-lg object-contain"
+                  className="min-h-[7.5rem] rounded-lg object-contain"
                 />
                 <span className="flex flex-col gap-2 pt-1">
                   {/* Title */}

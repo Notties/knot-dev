@@ -5,7 +5,7 @@ import { Link } from "next-view-transitions";
 
 export default function Footer() {
   return (
-    <div className="px-6 w-full flex justify-center items-start mt-12 mb-10">
+    <div className="container w-full flex justify-center items-start mt-12 mb-10">
       <div className="flex h-full w-full items-center justify-between max-w-custom ">
         <div className="w-full h-10 flex flex-col justify-start items-start ">
           <Link href={"/"}>
@@ -20,7 +20,7 @@ export default function Footer() {
               <span className="absolute inline-flex h-full w-full animate-ping duration-[2000ms] rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex size-2 rounded-full bg-green-500"></span>
             </span>
-            <p>November 9, 2025</p>
+            <p>April 19, 2026</p>
           </span>
         </div>
         <div

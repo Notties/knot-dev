@@ -2,17 +2,18 @@ export const careers = [
   {
     name: "SunmiTH Company Limited",
     href: "https://sunmith.com",
-    title: "Full Stack Developer",
+    title: "Senior Software Engineer",
     logo: "",
     start: "Nov. 2024",
     end: "Present",
     description: [
       "Designed and developed internal management web systems covering HR Management, CMS, and CRM.",
       "Designed and developed Mobile Applications for Warehouse Management supporting real-time operations.",
-      "Developed a bilingual corporate website (Thai–English) with SEO On Page optimization and continuous maintenance.",
+      "Developed a bilingual corporate website (Thai-English) with SEO On Page optimization and continuous maintenance.",
       "Managed deployment & hosting using Cloudflare, AWS (S3, Amplify, EC2, ECS, ECR) with Nginx and PM2 for reliability.",
       "Implemented automated lead generation workflows using n8n integrating multiple APIs and data sources.",
       "Acted as a technical mentor for interns, providing guidance on software development and workload allocation.",
+      "Participated in software development processes aligned with ISO/IEC 29110, including documentation, workflow standardization, and quality assurance practices.",
     ],
   },
   {
@@ -34,7 +35,7 @@ export const careers = [
   {
     name: "Metro Systems Corporation Public Company Limited",
     href: "https://www.metrosystems.co.th",
-    title: "Application Developer Intern",
+    title: "Application Developer",
     logo: "",
     start: "Aug. 2022",
     end: "Nov. 2022",

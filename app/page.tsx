@@ -8,8 +8,8 @@ import { Particle } from "@/components/pages/home/Particle";
 export default function Home() {
   return (
     <main>
-      <div className="flex flex-col items-center justify-center px-6 ">
-        <div className="max-w-custom flex flex-col gap-16 z-30 ">
+      <div className="container flex flex-col items-center justify-center">
+        <div className=" flex flex-col gap-16 z-30 ">
           <Header />
           <UserInterface />
           <Experience />
