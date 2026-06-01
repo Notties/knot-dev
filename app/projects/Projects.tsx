@@ -44,9 +44,7 @@ export default function ProjectsPage() {
           {filteredProjects.map((item) => (
             <div
               key={item.title}
-              className="flex flex-col gap-2 w-full border p-4 rounded-xl  
-              bg-card
-              transition-all duration-300 shadow-xs"
+              className="card-interactive flex flex-col gap-2 w-full p-4"
             >
               {/* Image */}
               <Image
@@ -60,7 +58,7 @@ export default function ProjectsPage() {
                 {/* Title */}
                 <p className="text-base font-semibold">{item.title}</p>
                 {/* Description */}
-                <p className="text-xs sm:text-sm font-normal text-gray line-clamp-2">
+                <p className="text-xs sm:text-sm font-normal text-muted-foreground line-clamp-2">
                   {item.description}
                 </p>
               </span>

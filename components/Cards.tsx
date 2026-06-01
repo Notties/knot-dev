@@ -10,10 +10,10 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({ title, imgSrc }) => {
   return (
     <div
-      className="border w-full flex flex-col cursor-pointer
-    justify-center items-center rounded-lg hover:shadow-xs transition-all duration-300
+      className="card-surface w-full flex flex-col cursor-pointer
+    justify-center items-center hover:border-foreground/15
     gap-2 grayscale hover:grayscale-0
-    h-16 xs:h-18 group bg-card dark:bg-card
+    h-16 xs:h-18 group
     "
     >
       <Image
@@ -25,7 +25,7 @@ const Card: React.FC<CardProps> = ({ title, imgSrc }) => {
         group-hover:translate-y-[-2px] transition-all duration-300
         "
       />
-      <p className="text-gray text-xs hidden xs:flex">{title}</p>
+      <p className="text-muted-foreground text-xs hidden xs:flex">{title}</p>
     </div>
   );
 };

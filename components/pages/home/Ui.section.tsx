@@ -12,7 +12,7 @@ export default function UserInterface() {
       >
         <Badge text="UI" />
 
-        <div className="h-48 border rounded-md w-full col-span-5 sm:col-span-3 p-6">
+        <div className="h-48 card-surface w-full col-span-5 sm:col-span-3 p-6">
           <Compare />
         </div>
 

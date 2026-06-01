@@ -4,10 +4,12 @@ import Projects from "@/components/pages/home/Projects.section";
 import Header from "@/components/pages/home/Hero.section";
 import UserInterface from "@/components/pages/home/Ui.section";
 import { Particle } from "@/components/pages/home/Particle";
+import HeroAura from "@/components/pages/home/HeroAura";
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative">
+      <HeroAura />
       <div className="container flex flex-col items-center justify-center">
         <div className=" flex flex-col gap-16 z-30 ">
           <Header />

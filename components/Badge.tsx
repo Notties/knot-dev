@@ -9,12 +9,13 @@ export default function Badge({ text, className }: Props) {
   return (
     <div
       className={cn(
-        `flex border rounded-md justify-center items-center px-[0.4rem] py-[0.3rem] bg-gray-50 
-        dark:bg-gray-dark text-xs `, 
+        `flex border border-border rounded-lg justify-center items-center px-2 py-1 bg-muted/60 text-xs`,
         className
       )}
     >
-      <p className=" text-gray dark:text-foreground/60">{text}</p>
+      <p className="font-medium uppercase tracking-wide text-muted-foreground">
+        {text}
+      </p>
     </div>
   );
 }

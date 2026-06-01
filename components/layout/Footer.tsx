@@ -9,13 +9,13 @@ export default function Footer() {
       <div className="flex h-full w-full items-center justify-between max-w-custom ">
         <div className="w-full h-10 flex flex-col justify-start items-start ">
           <Link href={"/"}>
-            <span className="text-xs flex gap-1 text-gray">
+            <span className="text-xs flex gap-1 text-muted-foreground">
               <p className=" transition-all duration-300 hover:text-foreground">
                 knot-dev.tech
               </p>
             </span>
           </Link>
-          <span className="text-xs text-gray flex gap-2 justify-start items-center">
+          <span className="text-xs text-muted-foreground flex gap-2 justify-start items-center">
             <span className="relative flex size-2">
               <span className="absolute inline-flex h-full w-full animate-ping duration-[2000ms] rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex size-2 rounded-full bg-green-500"></span>
@@ -24,7 +24,7 @@ export default function Footer() {
           </span>
         </div>
         <div
-          className="text-gray text-sm font-medium h-10 
+          className="text-muted-foreground text-sm font-medium h-10
         items-center flex justify-end gap-5"
         >
           <Link
