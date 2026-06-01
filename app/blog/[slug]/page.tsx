@@ -117,10 +117,10 @@ export default async function Page({
           {post.metadata.category && (
             <div className="flex gap-2 justify-start items-center">
               <Shapes
-                className="size-5 text-gray-700 dark:text-gray-400"
+                className="size-5 text-muted-foreground"
                 strokeWidth={1.5}
               />
-              <p className="text-sm text-gray-700 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+              <p className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">
                 {post.metadata.category}
               </p>
             </div>

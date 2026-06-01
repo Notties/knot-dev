@@ -202,6 +202,53 @@
 }
 
 @layer components {
+  /* ---- Refined Minimal: unified card surface + interactions ---- */
+  .card-surface,
+  .card-interactive {
+    @apply rounded-xl border bg-card transition-all duration-300 ease-out;
+    box-shadow: 0 1px 2px hsl(0 0% 0% / 0.04);
+  }
+  .dark .card-surface,
+  .dark .card-interactive {
+    box-shadow: 0 1px 2px hsl(0 0% 0% / 0.25);
+  }
+  .card-interactive:hover {
+    @apply -translate-y-0.5 border-foreground/15;
+    box-shadow: 0 8px 24px hsl(0 0% 0% / 0.07);
+  }
+  .dark .card-interactive:hover {
+    box-shadow: 0 8px 28px hsl(0 0% 0% / 0.4);
+  }
+
+  /* ---- Hero top-edge aura: slow drifting pastel glow ---- */
+  @keyframes aura-drift {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 300% 50%;
+    }
+  }
+  .hero-aura {
+    background: linear-gradient(
+      90deg,
+      hsl(231 92% 66% / 0.85),
+      hsl(269 90% 70% / 0.85),
+      hsl(190 95% 60% / 0.8),
+      hsl(269 90% 70% / 0.85),
+      hsl(231 92% 66% / 0.85)
+    );
+    background-size: 300% 100%;
+    animation: aura-drift 18s linear infinite;
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
+    mask-image: linear-gradient(to bottom, black, transparent 85%);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-aura {
+      animation: none;
+    }
+  }
+
   .custom-code-block pre {
     white-space: pre !important;
     tab-size: 2 !important;

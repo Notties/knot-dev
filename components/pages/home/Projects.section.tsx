@@ -28,9 +28,8 @@ export default function Projects() {
               <Link
                 href={"/projects"}
                 key={item.title}
-                className="flex flex-col gap-2 w-full border p-4 rounded-xl
-                bg-card
-                hover:bg-accent transition-all duration-300"              >
+                className="card-interactive cursor-pointer flex flex-col gap-2 w-full p-4"
+              >
                 {/* Image */}
                 <Image
                   src={item.image}
@@ -43,7 +42,7 @@ export default function Projects() {
                   {/* Title */}
                   <p className="text-base font-semibold">{item.title}</p>
                   {/* Description */}
-                  <p className="text-xs sm:text-sm font-normal text-gray line-clamp-2">
+                  <p className="text-xs sm:text-sm font-normal text-muted-foreground line-clamp-2">
                     {item.description}
                   </p>
                 </span>

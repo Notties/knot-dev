@@ -9,7 +9,7 @@ export default function Experience() {
       <div className="flex flex-col justify-start items-start gap-3">
         <Badge text="Experience" />
         <div
-          className="border rounded-md w-full
+          className="card-surface w-full
         flex justify-center"
         >
           <Timeline experience={careers}/>
